@@ -4,8 +4,8 @@ const CONTROLLER = 'Roster';
 
 
   type ACTIONS =
-  | 'currentWeek'
-  | 'upcomingWeek'
+  | 'current-week'
+  | 'upcoming-week'
 
 
   //#################################################//

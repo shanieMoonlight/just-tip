@@ -8,6 +8,11 @@ export const appRoutes: Route[] = [
         pathMatch: 'full',
     },
     {
+        path: `${JtAppRouteDefs.route('roster')}/:${JtAppRouteDefs.WEEK_NUM_PARAM}`,
+        loadComponent: () => import('./pages/roster/roster').then((m) => m.JtRosterPage),
+        pathMatch: 'full',
+    },
+    {
         path: JtAppRouteDefs.route('roster'),
         loadComponent: () => import('./pages/roster/roster').then((m) => m.JtRosterPage),
         pathMatch: 'full',
@@ -23,6 +28,31 @@ export const appRoutes: Route[] = [
         pathMatch: 'full',        
     },
     {
+        path: `${JtAppRouteDefs.route('employee-detail')}`,
+        loadComponent: () => import('./pages/employees/employee-detail/employee-detail').then((m) => m.JtEmployeeDetailPage),
+        pathMatch: 'full',
+    },
+    {
+        path: `${JtAppRouteDefs.route('employee-weekly-summary')}/:${JtAppRouteDefs.DETAIL_ID_PARAM}/:${JtAppRouteDefs.WEEK_NUM_PARAM}`,
+        loadComponent: () => import('./pages/employees/weekly-summary/weekly-summary').then((m) => m.JtEmployeeWeeklySummary),
+        pathMatch: 'full',        
+    },
+    {
+        path: `${JtAppRouteDefs.route('employee-weekly-summary')}/:${JtAppRouteDefs.DETAIL_ID_PARAM}`,
+        loadComponent: () => import('./pages/employees/weekly-summary/weekly-summary').then((m) => m.JtEmployeeWeeklySummary),
+        pathMatch: 'full',        
+    },
+    {
+        path: `${JtAppRouteDefs.route('employee-weekly-summary')}`,
+        loadComponent: () => import('./pages/employees/weekly-summary/weekly-summary').then((m) => m.JtEmployeeWeeklySummary),
+        pathMatch: 'full',
+    },
+    {
+        path: `${JtAppRouteDefs.route('tips')}/:${JtAppRouteDefs.WEEK_NUM_PARAM}`,
+        loadComponent: () => import('./pages/tips/tips').then((m) => m.JtTipsPage),
+        pathMatch: 'full',
+    },
+    {
         path: `${JtAppRouteDefs.route('tips')}`,
         loadComponent: () => import('./pages/tips/tips').then((m) => m.JtTipsPage),
         pathMatch: 'full',
@@ -34,7 +64,7 @@ export const appRoutes: Route[] = [
     },
     //   {
     //     path: '',
-    //     loadComponent: () => import('./pages/survey-builder').then((m) => m.JtSurveyBuilder),
+    //     loadComponent: () => import('./pages/employee-builder').then((m) => m.JtSurveyBuilder),
     //     pathMatch: 'full',
     //   },
 ];

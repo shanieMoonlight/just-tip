@@ -10,7 +10,8 @@ const CONTROLLER = 'Tips';
   | 'getAll'
   | 'get'
   | 'getTotalTipsCurrentWeek'
-  | 'getTotalTipsUpcomingWeek'
+  | 'getAllTipsByWeek'
+  | 'getTotalTipsByWeek'
 
 
   //#################################################//

@@ -1,6 +1,6 @@
 :host { display: inline-block; }
 
-.survey-card {
+.employee-card {
   display: inline-flex;
   width: 250px;
   height: 250px;
@@ -14,8 +14,8 @@
   transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
 }
 
-.survey-card:hover,
-.survey-card:focus {
+.employee-card:hover,
+.employee-card:focus {
   transform: translateY(-6px);
   box-shadow: 0 18px 48px rgba(16,24,40,0.12);
   border-color: rgba(59,130,246,0.12);

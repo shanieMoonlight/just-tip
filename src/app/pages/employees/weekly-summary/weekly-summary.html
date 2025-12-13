@@ -1,8 +1,8 @@
 
-<h1>Employee Info</h1>
+<h1>Summary - Week ({{_weekNumber()}})</h1>
 
-@if(_employee(); as employee){
-    {{employee| json }}
+@if(_summary(); as summary){
+    {{summary | json }}
 }@else{
   @if(!_loading() && !_errorMsg()){
     <h1>No Soup for you !!!!</h1>
@@ -30,5 +30,5 @@
     name="title" 
     [portalTemplate]="titleTemplate"/>
 
-
+    
 <!-- ################################ -->

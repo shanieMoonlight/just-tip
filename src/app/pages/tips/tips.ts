@@ -1,10 +1,79 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { CurrencyPipe, DatePipe } from '@angular/common';
+import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { MiniStateBuilder } from '@spider-baby/mini-state';
+import { MiniStateCombined } from '@spider-baby/mini-state/utils';
+import { SbPortalInputComponent } from '@spider-baby/utils-portal';
+import { TipsIoService } from '../../data/io';
+import { JtUiIconButton } from '../../ui/buttons/icon-button/icon-button';
+import { NotificationsModal } from '../../ui/notifications/notifications/notifications.component';
+import { WeekNumberRouteService } from '../../utils/services/week-number-route/week-number-route-service';
 
 @Component({
   selector: 'jt-tips',
-  imports: [],
+  imports: [
+    NotificationsModal,
+    SbPortalInputComponent,
+    JtUiIconButton,
+    DatePipe,
+    CurrencyPipe
+  ],
   templateUrl: './tips.html',
   styleUrl: './tips.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [WeekNumberRouteService],
 })
-export class JtTipsPage {}
+export class JtTipsPage {
+
+
+  private _tipIoService = inject(TipsIoService);
+  private _weekNumberRouteService = inject(WeekNumberRouteService);
+
+  //----------------//
+
+
+  protected _weekNumber$ = this._weekNumberRouteService.weekNumber$;
+  protected _weekNumber = this._weekNumberRouteService.weekNumber;
+  protected _weekNumberString$ = this._weekNumberRouteService.weekNumberString$;
+
+  protected _weekNumberString = toSignal(this._weekNumberString$);
+  protected _title = computed(() => `Tips Week: (${this._weekNumberString()})`);
+
+
+
+  // private _totalTipsState = MiniStateBuilder.Create(
+  //   () => this._tipIoService.getTotalTipsCurrentWeek())
+  //   .trigger();//Trigger immediately
+
+  private _totalTipsState = MiniStateBuilder.CreateWithObservableInput(
+    this._weekNumber$,
+    (weekNumber: number) => this._tipIoService.getTipsTotalByWeek(weekNumber))
+  private _tipsState = MiniStateBuilder.CreateWithObservableInput(
+    this._weekNumber$,
+    (weekNumber: number) => this._tipIoService.getAllTipsByWeek(weekNumber))
+
+
+  private _notificationStates = MiniStateCombined.Combine(
+    this._totalTipsState,
+    this._tipsState
+  )
+
+
+  protected _totalTips = computed(() => this._totalTipsState.data());
+  protected _tips = computed(() => this._tipsState.data());
+  protected _successMsg = this._notificationStates.successMsg;
+  protected _errorMsg = this._notificationStates.errorMsg;
+  protected _loading = this._notificationStates.loading;
+
+
+
+  previousWeek() {
+    this._weekNumberRouteService.setWeek(this._weekNumber() - 1);
+  }
+
+
+  nextWeek() {
+    this._weekNumberRouteService.setWeek(this._weekNumber() + 1);
+  }
+
+}

@@ -57,17 +57,25 @@ export class TipsIoService extends ABaseHttpService {
         );
 
 
-    getTotalTipsCurrentWeek = (opts?: unknown): Observable<TipDto> =>
-        this._getAction<TipDto>(
+    getTotalTipsCurrentWeek = (opts?: unknown): Observable<number> =>
+        this._getAction<number>(
             ServerRoutes.Tips.action('getTotalTipsCurrentWeek'),
             opts ?? {}
         );
-
-
-    getTotalTipsUpcomingWeek = (opts?: unknown): Observable<TipDto> =>
-        this._getAction<TipDto>(
-            ServerRoutes.Tips.action('getTotalTipsUpcomingWeek'),
+        
+    getTipsTotalByWeek = (weekNumber: number, opts?: unknown): Observable<number> =>
+        this._getActionById<number>(
+            ServerRoutes.Tips.action('getTotalTipsByWeek'),
+            weekNumber,
             opts ?? {}
         );
+
+    getAllTipsByWeek = (weekNumber: number, opts?: unknown): Observable<TipDto[]> =>
+        this._getActionById<TipDto[]>(
+            ServerRoutes.Tips.action('getAllTipsByWeek'),
+            weekNumber,
+            opts ?? {}
+        );
+
 
 }

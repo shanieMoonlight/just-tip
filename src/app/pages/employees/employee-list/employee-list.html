@@ -1,1 +1,38 @@
 <p>employee-list works!</p>
+
+
+
+
+<div class="cards-container">
+    
+    @for (employee of _data(); track $index) {
+        
+
+        {{employee|json}}
+      <!-- <mpt-ui-employee-card
+        [employee]="employee" /> -->
+        
+    }
+</div>
+
+
+
+<!-- ################################ -->
+
+<jt-notifications-modal
+  [isLoading]="_loading()"
+  [errorMsg]="_errorMsg()"
+  [successMsg]="_successMsg()"/>
+
+
+<!-- ################################ -->
+
+<ng-template #titleTemplate>
+    {{_title()}}
+</ng-template>
+
+<sb-portal-input  
+    name="title" 
+    [portalTemplate]="titleTemplate"/>
+
+<!-- ################################ -->

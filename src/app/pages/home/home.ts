@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { JtAppRouteDefs } from '../../app-route-defs';
 import { JtUiRouteCard } from '../../ui/cards/route-card/route-card';
+import { SbPortalInputComponent } from '@spider-baby/utils-portal';
 
 //######################################//
 
@@ -33,7 +34,8 @@ const ROUTE_CARDS: RouteCardConfig[] = [
 @Component({
   selector: 'jt-home',
   imports: [
-    JtUiRouteCard
+    JtUiRouteCard,
+    SbPortalInputComponent
   ],
   templateUrl: './home.html',
   styleUrl: './home.scss',
@@ -41,6 +43,7 @@ const ROUTE_CARDS: RouteCardConfig[] = [
 })
 export class JtHome {
 
+  _title = signal('Just Tip');
 
 
 

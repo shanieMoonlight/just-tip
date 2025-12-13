@@ -32,10 +32,11 @@ function wrapWithLeadingSlash<T>(fullPathsObj: T): T {
 /** Base route for the main application area. */
 const BaseRoute = '';
 
-/** Type alias for the child routes of the main application area: 'home' | 'survey-builder'| etc. */
+/** Type alias for the child routes of the main application area: 'home' | 'employee-builder'| etc. */
 type ROUTE = 'home'
     | 'employees'
     | 'employee-detail'
+    | 'employee-weekly-summary'
     | 'roster'
     | 'tips'
 
@@ -52,6 +53,7 @@ export class JtAppRouteDefs {
     /** Base path for the application (typically empty string for root). */
     static readonly BASE = BaseRoute;
     static readonly DETAIL_ID_PARAM = 'id';
+    static readonly WEEK_NUM_PARAM = 'week';
 
     //----------------------------//
 
@@ -59,7 +61,7 @@ export class JtAppRouteDefs {
     /**
      * Returns the provided route segment.
      * Primarily for use in this area's Angular route configuration.
-     * @param route - The route segment (e.g., 'home', 'survey-builder', etc).
+     * @param route - The route segment (e.g., 'home', 'employee-builder', etc).
      * @returns The route segment.
      */
     static route = (route: ROUTE) => route;
@@ -71,7 +73,7 @@ export class JtAppRouteDefs {
     //  */
     // static routes = {
     //     /** Relative routes for the 'main' application area. */
-    //     surveys: JtSurveSectionRoutesDefs.routes,
+    //     employees: JtSurveSectionRoutesDefs.routes,
     //     customers: JtCustomerSectionRoutesDefs.routes,
     // };
 
@@ -82,7 +84,7 @@ export class JtAppRouteDefs {
     //  */
     // static fullPaths = {
     //     /** Full paths for the 'main' application area. */
-    //     surveys: SurveySectionRoutesDefs.fullPathFn(this.BASE),
+    //     employees: SurveySectionRoutesDefs.fullPathFn(this.BASE),
     //     other sections: '...'
     // };
 

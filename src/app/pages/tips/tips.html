@@ -1,1 +1,54 @@
-<p>tips works!</p>
+
+<div class="button-previous">
+</div>
+
+<div class="header">
+
+    <div class="week">
+        <jt-ui-icon-button  
+        (click)="previousWeek()"
+        [iconName]="'arrow_circle_left'"/>
+        <h2>Week ({{_weekNumberString()}})</h2>
+        @if(!!_weekNumber()){
+            <jt-ui-icon-button 
+            (click)="nextWeek()"
+            [iconName]="'arrow_circle_right'"/>
+        }
+    </div>
+    
+    <h2>Total Tips : {{_totalTips()|currency: 'EUR'}}</h2>
+</div>
+
+<div class="tips">
+    @for (tip of _tips(); track $index) {
+        <div class="tip-display">
+            <div class="day">{{tip.dateTime | date:'EEEE  h:mm:ss a' }}</div>
+            <div class="amount">{{tip.amountEuros|currency: 'EUR'}}</div>
+        </div>
+    } @empty {
+    <h1>No Soup for you !!!!</h1>
+    }
+</div>
+    
+
+
+
+<!-- ################################ -->
+
+<jt-notifications-modal
+  [isLoading]="_loading()"
+  [errorMsg]="_errorMsg()"
+  [successMsg]="_successMsg()"/>
+
+
+<!-- ################################ -->
+
+<ng-template #titleTemplate>
+    {{_title()}}
+</ng-template>
+
+<sb-portal-input  
+    name="title" 
+    [portalTemplate]="titleTemplate"/>
+
+<!-- ################################ -->

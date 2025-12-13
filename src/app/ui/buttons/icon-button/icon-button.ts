@@ -17,7 +17,7 @@ import { JtUiIcon } from '../../icon/icon';
       [disabled]="disabled()"
       class="jt-icon-btn"
       [ngClass]="theme()">
-      <jt-ui-icon> {{iconName() }}</jt-ui-icon>
+      <jt-ui-icon [theme]="theme()"> {{iconName() }}</jt-ui-icon>
       <!-- <i class="material-icons">{{ iconName() }}</i> -->
     </button>
   `,

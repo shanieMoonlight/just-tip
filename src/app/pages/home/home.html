@@ -12,3 +12,16 @@
         
     }
 </div>
+
+
+<!-- ################################ -->
+
+<ng-template #titleTemplate>
+    {{_title()}}
+</ng-template>
+
+<sb-portal-input  
+    name="title" 
+    [portalTemplate]="titleTemplate"/>
+
+<!-- ################################ -->
