@@ -1,0 +1,14 @@
+<a class="employee-card" 
+    [routerLink]="[employeeDetailRoute()]" 
+    role="button" 
+    aria-label="View {{ employee().name }}"  
+    [attr.data-testid]="'route-card-' + employee().id">
+	<div class="card-inner">
+		<div class="card-title">{{ employee().name }}</div>
+		<div class="card-desc">{{ employee().description }}</div>
+<!-- 
+		<div class="card-footer">
+			<div class="question-count">{{ (employee().questions || []).length }} Questions</div>
+		</div> -->
+	</div>
+</a>

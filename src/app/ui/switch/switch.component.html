@@ -1,0 +1,11 @@
+<label class="jt-switch" [class.disabled]="_disabled()">
+  <input
+    type="checkbox"
+    class="jt-switch-input"
+    [checked]="checked()"
+    [disabled]="_disabled()"
+    (change)="onToggle($event)"
+    role="switch"
+    [attr.aria-checked]="checked()"/>
+  <span class="jt-switch-slider" aria-hidden="true"></span>
+</label>

@@ -1,0 +1,25 @@
+@if (_errorMsg()) {
+  <div class="error-modal-backdrop">
+    <div class="error-modal">
+      <div class="error-modal-header">
+        <jt-ui-icon>error</jt-ui-icon>
+        <h3>Error</h3>
+          <jt-ui-icon-button 
+            iconName="close"
+            [theme]="'error'" 
+            aria-label="Close error modal" 
+            (click)="dismissError()"/>
+      </div>
+      <div class="error-modal-body">
+        <p>{{ _errorMsg() }}</p>
+      </div>
+     
+      <jt-ui-divider [theme]="'error'" />
+     
+      <div class="error-modal-footer">
+        <jt-ui-text-button [theme]="'error'" 
+          (click)="dismissError()">Dismiss</jt-ui-text-button>
+      </div>
+    </div>
+  </div>
+}
