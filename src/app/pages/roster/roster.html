@@ -1,7 +1,22 @@
+
+<div class="header">
+
+    <div class="week">
+        <jt-ui-icon-button  
+          (click)="previousWeek()"
+          jtTooltip="Previous Week"
+          [iconName]="'arrow_circle_left'"/>
+        <h2>Week ({{_weekNumber() > 0 ? '+' : ''}}{{_weekNumberString()}})</h2>
+        <jt-ui-icon-button 
+          (click)="nextWeek()"
+          jtTooltip="Next Week"
+          [iconName]="'arrow_circle_right'"/>
+    </div>    
+</div>
+
 <h1>Roster: Week ({{_weekNumber()}})</h1>
 
-<h4>{{_roster()|json}}</h4>
-
+<jt-ui-roster-table [roster]="_roster()"/>
 
 <!-- ################################ -->
 

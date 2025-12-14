@@ -1,0 +1,36 @@
+<div class="jt-roster-table">
+
+  <div class="header-row">
+    <div class="name-col blank"></div>
+    <div class="dates">
+      @for (day of rosterDays(); track $index) {
+        <div class="col date-col">{{ day.date | date:'EEE. MMM d' }}</div>
+      }
+    </div>
+  </div>
+
+  @for (employee of employees(); track $index) {
+
+    <div class="row">
+      <div class="name-col">
+        <div class="avatar"><jt-ui-icon [iconSizePx]="28">face</jt-ui-icon></div>
+        <div class="employee-name">{{ employee.employeeName }}</div>
+      </div>
+
+      <div class="cells">
+        @for (day of rosterDays(); track $index) {
+          <div class="cell">
+            @if(getShifts(employee.employeeId, day.date).length) {
+              @for (shift of getShifts(employee.employeeId, day.date); track $index) {
+                <div class="shift">{{ shift.startTime | date:'shortTime'}} — {{ shift.endTime | date:'shortTime'}}</div>
+              }
+            } @else {
+              <div class="empty"></div>
+            }
+          </div>
+        }
+      </div>
+    </div>
+  }
+
+</div>

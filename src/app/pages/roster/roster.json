@@ -1,0 +1,473 @@
+{
+    "rangeStart": "2025-12-08T00:00:00+00:00",
+    "rangeEnd": "2025-12-15T00:00:00+00:00",
+    "days": [
+        {
+            "date": "2025-12-08T00:00:00Z",
+            "shifts": [
+                {
+                    "shiftId": "08de391a-cd2c-a29f-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ee2-18c0-4d950a2b0000",
+                    "employeeName": "Amelia",
+                    "date": "2025-12-08T00:00:00Z",
+                    "startTime": "2025-12-08T02:00:00+00:00",
+                    "endTime": "2025-12-08T11:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-a03c-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6edd-18c0-4d950a2b0000",
+                    "employeeName": "Mia",
+                    "date": "2025-12-08T00:00:00Z",
+                    "startTime": "2025-12-08T02:00:00+00:00",
+                    "endTime": "2025-12-08T14:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-9e51-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ed8-18c0-4d950a2b0000",
+                    "employeeName": "Mason",
+                    "date": "2025-12-08T00:00:00Z",
+                    "startTime": "2025-12-08T03:00:00+00:00",
+                    "endTime": "2025-12-08T13:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-9c7e-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ed3-18c0-4d950a2b0000",
+                    "employeeName": "Sophia",
+                    "date": "2025-12-08T00:00:00Z",
+                    "startTime": "2025-12-08T06:00:00+00:00",
+                    "endTime": "2025-12-08T10:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-a173-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ee0-18c0-4d950a2b0000",
+                    "employeeName": "Charlotte",
+                    "date": "2025-12-08T00:00:00Z",
+                    "startTime": "2025-12-08T08:00:00+00:00",
+                    "endTime": "2025-12-08T17:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-9bdf-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ed2-18c0-4d950a2b0000",
+                    "employeeName": "Liam",
+                    "date": "2025-12-08T00:00:00Z",
+                    "startTime": "2025-12-08T09:00:00+00:00",
+                    "endTime": "2025-12-08T16:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-9d18-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ed5-18c0-4d950a2b0000",
+                    "employeeName": "Noah",
+                    "date": "2025-12-08T00:00:00Z",
+                    "startTime": "2025-12-08T10:00:00+00:00",
+                    "endTime": "2025-12-08T18:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-981c-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ec9-18c0-4d950a2b0000",
+                    "employeeName": "Charlie",
+                    "date": "2025-12-08T00:00:00Z",
+                    "startTime": "2025-12-08T11:00:00+00:00",
+                    "endTime": "2025-12-08T21:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-9b3f-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ed0-18c0-4d950a2b0000",
+                    "employeeName": "Olivia",
+                    "date": "2025-12-08T00:00:00Z",
+                    "startTime": "2025-12-08T11:00:00+00:00",
+                    "endTime": "2025-12-08T20:00:00+00:00"
+                }
+            ]
+        },
+        {
+            "date": "2025-12-09T00:00:00Z",
+            "shifts": [
+                {
+                    "shiftId": "08de391a-cd2c-a03e-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6edd-18c0-4d950a2b0000",
+                    "employeeName": "Mia",
+                    "date": "2025-12-09T00:00:00Z",
+                    "startTime": "2025-12-09T00:00:00+00:00",
+                    "endTime": "2025-12-09T12:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-9958-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ecc-18c0-4d950a2b0000",
+                    "employeeName": "John",
+                    "date": "2025-12-09T00:00:00Z",
+                    "startTime": "2025-12-09T01:00:00+00:00",
+                    "endTime": "2025-12-09T11:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-9daf-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ed7-18c0-4d950a2b0000",
+                    "employeeName": "Ava",
+                    "date": "2025-12-09T00:00:00Z",
+                    "startTime": "2025-12-09T04:00:00+00:00",
+                    "endTime": "2025-12-09T11:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-96b3-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-628d-18c0-4d950a2b0000",
+                    "employeeName": "Bob",
+                    "date": "2025-12-09T00:00:00Z",
+                    "startTime": "2025-12-09T04:00:00+00:00",
+                    "endTime": "2025-12-09T13:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-a2a1-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ee2-18c0-4d950a2b0000",
+                    "employeeName": "Amelia",
+                    "date": "2025-12-09T00:00:00Z",
+                    "startTime": "2025-12-09T09:00:00+00:00",
+                    "endTime": "2025-12-09T13:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-a176-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ee0-18c0-4d950a2b0000",
+                    "employeeName": "Charlotte",
+                    "date": "2025-12-09T00:00:00Z",
+                    "startTime": "2025-12-09T09:00:00+00:00",
+                    "endTime": "2025-12-09T20:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-9a92-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ecf-18c0-4d950a2b0000",
+                    "employeeName": "Oliver",
+                    "date": "2025-12-09T00:00:00Z",
+                    "startTime": "2025-12-09T10:00:00+00:00",
+                    "endTime": "2025-12-09T21:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-99fc-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ecd-18c0-4d950a2b0000",
+                    "employeeName": "Emma",
+                    "date": "2025-12-09T00:00:00Z",
+                    "startTime": "2025-12-09T12:00:00+00:00",
+                    "endTime": "2025-12-09T21:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-9ee9-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6eda-18c0-4d950a2b0000",
+                    "employeeName": "Isabella",
+                    "date": "2025-12-09T00:00:00Z",
+                    "startTime": "2025-12-09T13:00:00+00:00",
+                    "endTime": "2025-12-09T23:00:00+00:00"
+                }
+            ]
+        },
+        {
+            "date": "2025-12-10T00:00:00Z",
+            "shifts": [
+                {
+                    "shiftId": "08de391a-cd2c-9774-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ec1-18c0-4d950a2b0000",
+                    "employeeName": "Alice",
+                    "date": "2025-12-10T00:00:00Z",
+                    "startTime": "2025-12-10T00:00:00+00:00",
+                    "endTime": "2025-12-10T12:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-9c81-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ed3-18c0-4d950a2b0000",
+                    "employeeName": "Sophia",
+                    "date": "2025-12-10T00:00:00Z",
+                    "startTime": "2025-12-10T00:00:00+00:00",
+                    "endTime": "2025-12-10T09:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-a2a4-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ee2-18c0-4d950a2b0000",
+                    "employeeName": "Amelia",
+                    "date": "2025-12-10T00:00:00Z",
+                    "startTime": "2025-12-10T03:00:00+00:00",
+                    "endTime": "2025-12-10T07:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-98c8-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6eca-18c0-4d950a2b0000",
+                    "employeeName": "Mary",
+                    "date": "2025-12-10T00:00:00Z",
+                    "startTime": "2025-12-10T03:00:00+00:00",
+                    "endTime": "2025-12-10T07:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-a0dc-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ede-18c0-4d950a2b0000",
+                    "employeeName": "Ethan",
+                    "date": "2025-12-10T00:00:00Z",
+                    "startTime": "2025-12-10T05:00:00+00:00",
+                    "endTime": "2025-12-10T12:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-9d1b-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ed5-18c0-4d950a2b0000",
+                    "employeeName": "Noah",
+                    "date": "2025-12-10T00:00:00Z",
+                    "startTime": "2025-12-10T05:00:00+00:00",
+                    "endTime": "2025-12-10T14:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-a178-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ee0-18c0-4d950a2b0000",
+                    "employeeName": "Charlotte",
+                    "date": "2025-12-10T00:00:00Z",
+                    "startTime": "2025-12-10T08:00:00+00:00",
+                    "endTime": "2025-12-10T12:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-9a94-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ecf-18c0-4d950a2b0000",
+                    "employeeName": "Oliver",
+                    "date": "2025-12-10T00:00:00Z",
+                    "startTime": "2025-12-10T14:00:00+00:00",
+                    "endTime": "2025-12-10T18:00:00+00:00"
+                }
+            ]
+        },
+        {
+            "date": "2025-12-11T00:00:00Z",
+            "shifts": [
+                {
+                    "shiftId": "08de391a-cd2c-a2a6-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ee2-18c0-4d950a2b0000",
+                    "employeeName": "Amelia",
+                    "date": "2025-12-11T00:00:00Z",
+                    "startTime": "2025-12-11T01:00:00+00:00",
+                    "endTime": "2025-12-11T05:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-981e-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ec9-18c0-4d950a2b0000",
+                    "employeeName": "Charlie",
+                    "date": "2025-12-11T00:00:00Z",
+                    "startTime": "2025-12-11T07:00:00+00:00",
+                    "endTime": "2025-12-11T16:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-9be3-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ed2-18c0-4d950a2b0000",
+                    "employeeName": "Liam",
+                    "date": "2025-12-11T00:00:00Z",
+                    "startTime": "2025-12-11T09:00:00+00:00",
+                    "endTime": "2025-12-11T17:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-a041-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6edd-18c0-4d950a2b0000",
+                    "employeeName": "Mia",
+                    "date": "2025-12-11T00:00:00Z",
+                    "startTime": "2025-12-11T09:00:00+00:00",
+                    "endTime": "2025-12-11T17:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-9b42-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ed0-18c0-4d950a2b0000",
+                    "employeeName": "Olivia",
+                    "date": "2025-12-11T00:00:00Z",
+                    "startTime": "2025-12-11T09:00:00+00:00",
+                    "endTime": "2025-12-11T16:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-9d1d-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ed5-18c0-4d950a2b0000",
+                    "employeeName": "Noah",
+                    "date": "2025-12-11T00:00:00Z",
+                    "startTime": "2025-12-11T16:00:00+00:00",
+                    "endTime": "2025-12-11T23:00:00+00:00"
+                }
+            ]
+        },
+        {
+            "date": "2025-12-12T00:00:00Z",
+            "shifts": [
+                {
+                    "shiftId": "08de391a-cd2c-9777-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ec1-18c0-4d950a2b0000",
+                    "employeeName": "Alice",
+                    "date": "2025-12-12T00:00:00Z",
+                    "startTime": "2025-12-12T03:00:00+00:00",
+                    "endTime": "2025-12-12T07:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-9821-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ec9-18c0-4d950a2b0000",
+                    "employeeName": "Charlie",
+                    "date": "2025-12-12T00:00:00Z",
+                    "startTime": "2025-12-12T06:00:00+00:00",
+                    "endTime": "2025-12-12T12:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-9b45-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ed0-18c0-4d950a2b0000",
+                    "employeeName": "Olivia",
+                    "date": "2025-12-12T00:00:00Z",
+                    "startTime": "2025-12-12T06:00:00+00:00",
+                    "endTime": "2025-12-12T12:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-a0de-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ede-18c0-4d950a2b0000",
+                    "employeeName": "Ethan",
+                    "date": "2025-12-12T00:00:00Z",
+                    "startTime": "2025-12-12T07:00:00+00:00",
+                    "endTime": "2025-12-12T15:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-a044-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6edd-18c0-4d950a2b0000",
+                    "employeeName": "Mia",
+                    "date": "2025-12-12T00:00:00Z",
+                    "startTime": "2025-12-12T07:00:00+00:00",
+                    "endTime": "2025-12-12T19:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-a208-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ee1-18c0-4d950a2b0000",
+                    "employeeName": "Logan",
+                    "date": "2025-12-12T00:00:00Z",
+                    "startTime": "2025-12-12T11:00:00+00:00",
+                    "endTime": "2025-12-12T15:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-9c84-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ed3-18c0-4d950a2b0000",
+                    "employeeName": "Sophia",
+                    "date": "2025-12-12T00:00:00Z",
+                    "startTime": "2025-12-12T15:00:00+00:00",
+                    "endTime": "2025-12-12T21:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-96bb-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-628d-18c0-4d950a2b0000",
+                    "employeeName": "Bob",
+                    "date": "2025-12-12T00:00:00Z",
+                    "startTime": "2025-12-12T16:00:00+00:00",
+                    "endTime": "2025-12-12T22:00:00+00:00"
+                }
+            ]
+        },
+        {
+            "date": "2025-12-13T00:00:00Z",
+            "shifts": [
+                {
+                    "shiftId": "08de391a-cd2c-a0e1-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ede-18c0-4d950a2b0000",
+                    "employeeName": "Ethan",
+                    "date": "2025-12-13T00:00:00Z",
+                    "startTime": "2025-12-13T06:00:00+00:00",
+                    "endTime": "2025-12-13T13:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-9be6-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ed2-18c0-4d950a2b0000",
+                    "employeeName": "Liam",
+                    "date": "2025-12-13T00:00:00Z",
+                    "startTime": "2025-12-13T06:00:00+00:00",
+                    "endTime": "2025-12-13T11:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-9faa-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6edb-18c0-4d950a2b0000",
+                    "employeeName": "Lucas",
+                    "date": "2025-12-13T00:00:00Z",
+                    "startTime": "2025-12-13T09:00:00+00:00",
+                    "endTime": "2025-12-13T21:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-9a97-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ecf-18c0-4d950a2b0000",
+                    "employeeName": "Oliver",
+                    "date": "2025-12-13T00:00:00Z",
+                    "startTime": "2025-12-13T09:00:00+00:00",
+                    "endTime": "2025-12-13T13:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-995b-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ecc-18c0-4d950a2b0000",
+                    "employeeName": "John",
+                    "date": "2025-12-13T00:00:00Z",
+                    "startTime": "2025-12-13T10:00:00+00:00",
+                    "endTime": "2025-12-13T22:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-a2a9-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ee2-18c0-4d950a2b0000",
+                    "employeeName": "Amelia",
+                    "date": "2025-12-13T00:00:00Z",
+                    "startTime": "2025-12-13T13:00:00+00:00",
+                    "endTime": "2025-12-13T23:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-9ef1-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6eda-18c0-4d950a2b0000",
+                    "employeeName": "Isabella",
+                    "date": "2025-12-13T00:00:00Z",
+                    "startTime": "2025-12-13T13:00:00+00:00",
+                    "endTime": "2025-12-13T19:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-9b47-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ed0-18c0-4d950a2b0000",
+                    "employeeName": "Olivia",
+                    "date": "2025-12-13T00:00:00Z",
+                    "startTime": "2025-12-13T13:00:00+00:00",
+                    "endTime": "2025-12-13T19:00:00+00:00"
+                }
+            ]
+        },
+        {
+            "date": "2025-12-14T00:00:00Z",
+            "shifts": [
+                {
+                    "shiftId": "08de391a-cd2c-96c4-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-628d-18c0-4d950a2b0000",
+                    "employeeName": "Bob",
+                    "date": "2025-12-14T00:00:00Z",
+                    "startTime": "2025-12-14T00:00:00+00:00",
+                    "endTime": "2025-12-14T05:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-a17b-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ee0-18c0-4d950a2b0000",
+                    "employeeName": "Charlotte",
+                    "date": "2025-12-14T00:00:00Z",
+                    "startTime": "2025-12-14T02:00:00+00:00",
+                    "endTime": "2025-12-14T12:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-a0e4-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ede-18c0-4d950a2b0000",
+                    "employeeName": "Ethan",
+                    "date": "2025-12-14T00:00:00Z",
+                    "startTime": "2025-12-14T02:00:00+00:00",
+                    "endTime": "2025-12-14T12:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-9a9a-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ecf-18c0-4d950a2b0000",
+                    "employeeName": "Oliver",
+                    "date": "2025-12-14T00:00:00Z",
+                    "startTime": "2025-12-14T10:00:00+00:00",
+                    "endTime": "2025-12-14T21:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-a2ab-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6ee2-18c0-4d950a2b0000",
+                    "employeeName": "Amelia",
+                    "date": "2025-12-14T00:00:00Z",
+                    "startTime": "2025-12-14T12:00:00+00:00",
+                    "endTime": "2025-12-14T23:00:00+00:00"
+                },
+                {
+                    "shiftId": "08de391a-cd2c-9fac-18c0-4d950a2b0000",
+                    "employeeId": "08de391a-cd2c-6edb-18c0-4d950a2b0000",
+                    "employeeName": "Lucas",
+                    "date": "2025-12-14T00:00:00Z",
+                    "startTime": "2025-12-14T12:00:00+00:00",
+                    "endTime": "2025-12-14T16:00:00+00:00"
+                }
+            ]
+        }
+    ]
+}

@@ -6,11 +6,13 @@
 
     <div class="week">
         <jt-ui-icon-button  
+        jtTooltip="Previous Week"
         (click)="previousWeek()"
         [iconName]="'arrow_circle_left'"/>
         <h2>Week ({{_weekNumberString()}})</h2>
         @if(!!_weekNumber()){
             <jt-ui-icon-button 
+            jtTooltip="Next Week"
             (click)="nextWeek()"
             [iconName]="'arrow_circle_right'"/>
         }
@@ -22,11 +24,13 @@
 <div class="tips">
     @for (tip of _tips(); track $index) {
         <div class="tip-display">
-            <div class="day">{{tip.dateTime | date:'EEEE  h:mm:ss a' }}</div>
-            <div class="amount">{{tip.amountEuros|currency: 'EUR'}}</div>
+            <div class="tip-day">{{tip.dateTime | date:'EEEE  h:mm:ss a' }}</div>
+            <div class="tip-amount">{{tip.amountEuros|currency: 'EUR'}}</div>
         </div>
     } @empty {
-    <h1>No Soup for you !!!!</h1>
+      @if(!_loading() && !_errorMsg()){   
+        <h1>No Soup for you !!!!</h1>
+      }
     }
 </div>
     

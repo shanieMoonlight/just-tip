@@ -1,9 +1,28 @@
 
-<h1>Summary - Week ({{_weekNumber()}})</h1>
+<!-- <h1>Summary - Week ({{_weekNumber()}})</h1> -->
+
+<div class="header">
+
+    <div class="week">
+        <jt-ui-icon-button  
+        jtTooltip="Previous Week"
+        (click)="previousWeek()"
+        [iconName]="'arrow_circle_left'"/>
+        <h2>Summary - Week ({{_weekNumberString()}})</h2>
+        @if(!!_weekNumber()){
+            <jt-ui-icon-button 
+            jtTooltip="Next Week"
+            (click)="nextWeek()"
+            [iconName]="'arrow_circle_right'"/>
+        }
+    </div>
+</div>
+
 
 @if(_summary(); as summary){
-    {{summary | json }}
-}@else{
+        <jt-ui-employee-weekly-summary-card 
+          [employee]="summary"/>
+} @else {
   @if(!_loading() && !_errorMsg()){
     <h1>No Soup for you !!!!</h1>
   }

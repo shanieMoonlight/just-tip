@@ -1,10 +1,25 @@
-
 @use './sass/forms.scss' as forms;
 
-:root{
-   --border-radius: 0.25rem;
-   --border-radius-btn: 0.5rem;
+:root {
+  --border-radius: 0.25rem;
+  --border-radius-btn: 0.5rem;
+
+  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 4px 6px rgba(0, 0, 0, 0.06);
+  --card-shadow-hover: 0 6px 18px rgba(0, 0, 0, 0.12);
+  --card-shadow-hover: 0 6px 18px rgba(0, 0, 0, 0.12);
+  --card-border: none;
+  --card-border-color: var(--mat-sys-outline-variant);
+  // --border-color-hover: none;
+  --border-color-hover: rgba(var(--mat-sys-primary-rgb), 0.25);
 }
+
+html.dark-mode {
+  --card-shadow: none;
+  --card-shadow-hover: 0 12px 36px rgba(255, 255, 255, 0.06), 0 6px 18px rgba(0, 0, 0, 0.6);
+  --card-border: 1px solid var(--card-border-color);
+}
+
+
 
 html,
 body {
@@ -20,6 +35,10 @@ body {
 
 
 
+
+
+
+
 /* Styles for ANY img tag that has a view-transition-name style attribute */
 img[style*="view-transition-name"] {
   // display: block; /* Ensures consistent layout behavior for the transitioning image */
@@ -30,7 +49,8 @@ img[style*="view-transition-name"] {
 
 /* Target any view transition group */
 ::view-transition-group(*) {
-  animation-duration: 0.35s; /* Adjust as needed */
+  animation-duration: 0.35s;
+  /* Adjust as needed */
   animation-timing-function: ease-in-out;
   /* You can add more specific animation properties here if needed */
 }
@@ -38,9 +58,8 @@ img[style*="view-transition-name"] {
 /* Ensure the old and new elements in any transition maintain consistent styling */
 ::view-transition-old(*),
 ::view-transition-new(*) {
-  width: 100%;    // Ensure the transition element itself fills its space
+  width: 100%; // Ensure the transition element itself fills its space
   height: 100%;
   // object-fit: cover; /* Consistent object-fit, primarily for images */
   /* Mix-blend-mode can sometimes cause issues if not intended for the transition */
 }
-

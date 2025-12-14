@@ -13,6 +13,7 @@ const CONTROLLER = 'Employees';
   | 'addShift'
   | 'removeShift'
   | 'getEmployeeWeeklySummary'
+  | 'getEmployeeWeeklySummaryByWeek'
 
 
   //#################################################//

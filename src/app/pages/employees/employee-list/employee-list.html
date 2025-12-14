@@ -1,17 +1,23 @@
-<p>employee-list works!</p>
 
-
-
-
-<div class="cards-container">
+<div class="employees">
     
     @for (employee of _data(); track $index) {
         
 
-        {{employee|json}}
-      <!-- <mpt-ui-employee-card
-        [employee]="employee" /> -->
+        <!-- {{employee|json}} -->
+        <div class="employee-display" 
+            tabindex="0"
+            (click)="goToEmlployeeDetails(employee.id)"
+            (keyup.enter)="goToEmlployeeDetails(employee.id)"
+            (keydown.space)="$event.preventDefault(); goToEmlployeeDetails(employee.id)">
+            <div class="name">{{employee.name}}</div>
+            <div class="description">{{employee.description}}</div>
+        </div>
         
+    } @empty {
+      @if(!_loading() && !_errorMsg()){   
+        <h1>No Soup for you !!!!</h1>
+      }
     }
 </div>
 

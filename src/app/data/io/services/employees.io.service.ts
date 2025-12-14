@@ -6,6 +6,7 @@ import { ServerRoutes } from '../controllers/all-server-routes.js';
 import { ABaseHttpService } from '../data-service/a-base-data.io.service.js';
 import { JustTipIoConfigService } from '../setup.js';
 import { Identifier } from '../data-service/identifier';
+import { EmployeeWeeklySummaryDto } from '../../models/employee-weekly-summary-dto';
 
 @Injectable({ providedIn: 'root' })
 export class EmployeesIoService extends ABaseHttpService {
@@ -79,11 +80,15 @@ export class EmployeesIoService extends ABaseHttpService {
         );
     
   
-    getEmployeeWeeklySummaryById = (id: string, opts?: unknown): Observable<RosterDto> =>
-        this._getActionById<RosterDto>(
-            ServerRoutes.Employees.action('getEmployeeWeeklySummary'),
-           [id],
-           opts ?? {}
-        );
+    getEmployeeWeeklySummaryById = (id: Identifier, weekNumber: number, opts?: unknown): Observable<EmployeeWeeklySummaryDto> =>
+        {
+            console.log(`getEmployeeWeeklySummaryById called with id: ${id} and weekNumber: ${weekNumber}`);
+            
+            return this._getActionById<EmployeeWeeklySummaryDto>(
+                ServerRoutes.Employees.action('getEmployeeWeeklySummaryByWeek'),
+                [id, weekNumber],
+                opts ?? {}
+            );
+        };
     
 }

@@ -16,14 +16,21 @@ export class RosterIoService extends ABaseHttpService {
   
     currentWeek = (opts?: unknown): Observable<RosterDto> =>
         this._getAction<RosterDto>(
-            ServerRoutes.Roster.action('current-week'),
+            ServerRoutes.Roster.action('getCurrentWeek'),
             opts ?? {}
         );
     
   
     upcomingWeek = (opts?: unknown): Observable<RosterDto> =>
         this._getAction<RosterDto>(
-            ServerRoutes.Roster.action('upcoming-week'),
+            ServerRoutes.Roster.action('getUpcomingWeek'),
+            opts ?? {}
+        );
+  
+    getByWeek = (weekNumber: number, opts?: unknown): Observable<RosterDto> =>
+        this._getActionById<RosterDto>(
+            ServerRoutes.Roster.action('getByWeek'),
+            weekNumber,
             opts ?? {}
         );
     

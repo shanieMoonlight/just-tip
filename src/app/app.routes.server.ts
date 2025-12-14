@@ -18,4 +18,8 @@ export const serverRoutes: ServerRoute[] = [
     path: `${JtAppRouteDefs.route('tips')}/:${JtAppRouteDefs.WEEK_NUM_PARAM}`,
     renderMode: RenderMode.Client
   },
+  {
+    path: `${JtAppRouteDefs.route('roster')}/:${JtAppRouteDefs.WEEK_NUM_PARAM}`,
+    renderMode: RenderMode.Client
+  },
 ];
