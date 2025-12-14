@@ -1,17 +1,18 @@
 import { JsonPipe } from '@angular/common';
-import { ChangeDetectionStrategy, Component, computed, effect, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
 import { MiniStateBuilder } from '@spider-baby/mini-state';
 import { SbPortalInputComponent } from '@spider-baby/utils-portal';
 import { combineLatest, filter, map, startWith } from 'rxjs';
 import { JtAppRouteDefs } from '../../../app-route-defs';
 import { EmployeesIoService } from '../../../data/io';
-import { NotificationsModal } from '../../../ui/notifications/notifications/notifications.component';
-import { WeekNumberRouteService } from '../../../utils/services/week-number-route/week-number-route-service';
+import { JtUiButton } from '../../../ui/buttons/button/button.component';
 import { JtUiIconButton } from '../../../ui/buttons/icon-button/icon-button';
 import { JtUiEmployeeWeeklySummaryCard } from '../../../ui/cards/employee-weekly-summary-card/employee-weekly-summary-card';
+import { NotificationsModal } from '../../../ui/notifications/notifications/notifications.component';
 import { JtUiTooltipDirective } from '../../../ui/tooltip/tooltip.directive';
+import { WeekNumberRouteService } from '../../../utils/services/week-number-route/week-number-route-service';
 
 @Component({
   selector: 'jt-weekly-summary',
@@ -19,9 +20,11 @@ import { JtUiTooltipDirective } from '../../../ui/tooltip/tooltip.directive';
     NotificationsModal,
     SbPortalInputComponent,
     JtUiIconButton,
+    JtUiButton,
     JtUiEmployeeWeeklySummaryCard,
     JtUiTooltipDirective,
-    JsonPipe
+    JsonPipe,
+    RouterLink
   ],
   templateUrl: './weekly-summary.html',
   styleUrl: './weekly-summary.scss',
@@ -48,6 +51,8 @@ export class JtEmployeeWeeklySummary {
     filter((id: string | undefined): id is string => !!id)
   )
 
+  private _id = toSignal(this._id$);
+
   protected _title = computed(() => `Summary Week (${this._weekNumberString()})`);
 
 
@@ -68,6 +73,9 @@ export class JtEmployeeWeeklySummary {
   protected _successMsg = this._summaryState.successMsg;
   protected _errorMsg = this._summaryState.errorMsg;
   protected _loading = this._summaryState.loading;
+
+  protected _addShiftRoute = computed(() =>
+    `/${JtAppRouteDefs.route('add-shift')}/${this._id()}`)
 
   //----------------//
 

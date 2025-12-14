@@ -18,7 +18,7 @@ import { JustTipTheme } from '../../theme';
   styleUrls: ['./button.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class JtUiButtonComponent {
+export class JtUiButton {
 
   disabled = input<boolean>(false);
 

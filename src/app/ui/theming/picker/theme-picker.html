@@ -1,5 +1,5 @@
 <div cdkMenuBar>
-  <jt-ui-icon-button  [iconName]="'palette'"
+  <jt-ui-icon-button  [iconName]="'palette'" [theme]="undefined"
     [cdkMenuTriggerFor]="menu"/>
 </div>
 
@@ -9,8 +9,12 @@
       <div
         cdkMenuItem
         class="theme-menu-item"
-        [class.selected]="option.value === _selectedOption()?.value"
-        (click)="_changeThemeClick$.next(option)">
+        role="button"
+        tabindex="0"
+        [class.selected]="option.value === _selectedOption()?.value"      
+        (click)="_changeThemeClick$.next(option)"
+        (keydown.enter)="_changeThemeClick$.next(option)"
+        (keydown.space)="$event.preventDefault(); _changeThemeClick$.next(option)">
         <sb-theme-avatar [theme]="option"/>
         <span>{{ option.label }}</span>
       </div>

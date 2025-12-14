@@ -1,16 +1,13 @@
 import { JsonPipe } from '@angular/common';
-import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
+import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { MiniStateBuilder } from '@spider-baby/mini-state';
 import { SbPortalInputComponent } from '@spider-baby/utils-portal';
 import { RosterIoService } from '../../data/io';
-import { NotificationsModal } from '../../ui/notifications/notifications/notifications.component';
-import { WeekNumberRouteService } from '../../utils/services/week-number-route/week-number-route-service';
 import { JtUiIconButton } from '../../ui/buttons/icon-button/icon-button';
-import { JtUiTooltipDirective } from '../../ui/tooltip/tooltip.directive';
+import { NotificationsModal } from '../../ui/notifications/notifications/notifications.component';
 import { JtUiRosterTable } from '../../ui/roster-table/roster-table';
-import { sign } from 'crypto';
-import { rosterSample } from './roster-sample';
+import { JtUiTooltipDirective } from '../../ui/tooltip/tooltip.directive';
+import { WeekNumberRouteService } from '../../utils/services/week-number-route/week-number-route-service';
 
 @Component({
   selector: 'jt-roster',

@@ -39,6 +39,9 @@ type ROUTE = 'home'
     | 'employee-weekly-summary'
     | 'roster'
     | 'tips'
+    | 'add-shift'
+    | 'edit-shift'
+    | 'employee-shifts'
 
 
 //#################################################//
@@ -53,6 +56,8 @@ export class JtAppRouteDefs {
     /** Base path for the application (typically empty string for root). */
     static readonly BASE = BaseRoute;
     static readonly DETAIL_ID_PARAM = 'id';
+    static readonly SHIFT_ID_PARAM = 'shiftid';
+    static readonly EMPLOYEE_ID_PARAM = 'employeeid';
     static readonly WEEK_NUM_PARAM = 'week';
 
     //----------------------------//

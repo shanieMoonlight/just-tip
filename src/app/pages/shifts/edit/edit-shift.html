@@ -1,0 +1,33 @@
+<div class="header">
+        <h2>Edit Shift for {{_employee()?.name}}</h2>
+</div>
+
+<jt-shift-form
+    [shiftToEdit]="_shift()"
+    [employee]="_employee()"
+    (shift)="editShift($event)"
+/>
+
+
+
+<!-- ################################ -->
+
+<jt-notifications-modal
+  [isLoading]="_loading()"
+  [errorMsg]="_errorMsg()"
+  [successMsg]="_successMsg()"/>
+
+
+<!-- ################################ -->
+
+
+<ng-template #titleTemplate>
+    {{_title()}}
+</ng-template>
+
+<sb-portal-input  
+    name="title" 
+    [portalTemplate]="titleTemplate"/>
+
+
+<!-- ################################ -->

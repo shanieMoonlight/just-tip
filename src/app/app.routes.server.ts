@@ -22,4 +22,8 @@ export const serverRoutes: ServerRoute[] = [
     path: `${JtAppRouteDefs.route('roster')}/:${JtAppRouteDefs.WEEK_NUM_PARAM}`,
     renderMode: RenderMode.Client
   },
+  {
+    path: `${JtAppRouteDefs.route('add-shift')}/:${JtAppRouteDefs.EMPLOYEE_ID_PARAM}`,
+    renderMode: RenderMode.Client
+  },
 ];

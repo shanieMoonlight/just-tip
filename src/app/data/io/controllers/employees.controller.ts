@@ -14,6 +14,7 @@ const CONTROLLER = 'Employees';
   | 'removeShift'
   | 'getEmployeeWeeklySummary'
   | 'getEmployeeWeeklySummaryByWeek'
+  | 'getUpcomingShifts'
 
 
   //#################################################//

@@ -1,0 +1,65 @@
+<div class="header">
+        <h2>{{_employee()?.name}}'s Shifts</h2>
+</div>
+
+<div class="header">
+
+    <div class="week">
+        <h2>{{_employee()?.name}}'s Shifts</h2>
+        <jt-ui-icon-button 
+          [routerLink]="[_addShiftRoute(), _employeeId()]"
+          jtTooltip="Add Shift"
+            theme="primary"
+          [iconName]="'calendar_month'"/>
+    </div>    
+</div>
+
+<div class="shifts">
+    @for (shift of _shifts(); track $index) {
+        <!-- {{shift | json}} -->
+        <div class="shift-card">
+            <div class="shift-summary"
+                [routerLink]="[_editShiftRoute(), shift.shiftId]" >
+                <div class="shift-date">
+                    {{ shift.date | date:'EEE. MMM d' }}
+                </div>
+                <div class="shift-times">
+                    {{ shift.startTime | date:'shortTime'}} — {{ shift.endTime | date:'shortTime'}}
+                </div>
+            </div>
+      <jt-ui-icon-button 
+                iconName="delete" 
+                theme="error"
+                (click)="deleteShift(shift)"/>
+        </div>
+    } @empty {
+      @if(!_loading() && !_errorMsg()){   
+        <h1>No Soup for you !!!!</h1>
+      }
+    }
+</div>
+    
+
+
+
+<!-- ################################ -->
+
+<jt-notifications-modal
+  [isLoading]="_loading()"
+  [errorMsg]="_errorMsg()"
+  [successMsg]="_successMsg()"/>
+
+
+<!-- ################################ -->
+
+
+<ng-template #titleTemplate>
+    {{_title()}}
+</ng-template>
+
+<sb-portal-input  
+    name="title" 
+    [portalTemplate]="titleTemplate"/>
+
+
+<!-- ################################ -->

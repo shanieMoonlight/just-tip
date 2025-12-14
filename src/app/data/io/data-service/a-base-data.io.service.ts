@@ -4,7 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { DateUtils } from './date-utils';
 import { Identifier } from './identifier';
-import { HttpError, INTERNAL_SERVER_ERROR_MESSAGE, NotFoundError, UnreadableResponseError } from './io-errors';
+import { BadRequestError, HttpError, INTERNAL_SERVER_ERROR_MESSAGE, NotFoundError, UnreadableResponseError } from './io-errors';
 import { UrlUtils } from './url-utils';
 import { JustTipIoConfigOptions } from '../setup';
 
@@ -255,21 +255,26 @@ export abstract class ABaseHttpService {
     if (statusCode === HttpStatusCode.NotFound)
       return throwError(() => new NotFoundError(error));
 
+    if (statusCode === HttpStatusCode.BadRequest) {
+      return throwError(
+        () => this.generateBadRequestError(error)
+      );
+    }
 
     //Known error?
     const nonBadRequestHttpError =
       HttpError.getNonBadRequestErrorFromStatusCode(statusCode);
+
+
 
     //if error IS the message, get it.
     if (error && typeof error === 'string')
       nonBadRequestHttpError.message = error;
 
     //if error HAS a message, get it.
-    if (error?.message) nonBadRequestHttpError.message = error.message;
+    if (error?.message)
+      nonBadRequestHttpError.message = error.message;
 
-    // //if httpErrorResponse has a message, use it.
-    // if (httpErrorResponse?.message)
-    //     nonBadRequestHttpError.message = httpErrorResponse.message
 
     //If it's an InternalServerError and still no message: Add our own.
     //use '==' in case stasusCode is a string
@@ -281,7 +286,8 @@ export abstract class ABaseHttpService {
       nonBadRequestHttpError.message = INTERNAL_SERVER_ERROR_MESSAGE;
 
     //Just pass on Non-BadRequestErrors
-    if (nonBadRequestHttpError) return throwError(() => nonBadRequestHttpError);
+    if (nonBadRequestHttpError)
+      return throwError(() => nonBadRequestHttpError);
 
     //Look for custom sever error header
     let applicationErrorMsg =
@@ -333,6 +339,22 @@ export abstract class ABaseHttpService {
           applicationErrorMsg
         )
     );
+  }
+
+  //----------------------//
+
+  private generateBadRequestError(error: any) {
+    let message = 'Bad Request';
+    if (typeof error === 'string')
+      message = error;
+
+    const modelStateErrors = error?.errors;
+    console.log('modelStateErrors', modelStateErrors)
+    if (modelStateErrors) {
+      message = Object.values(error.errors).join(',\r\n');
+    }
+    return new BadRequestError(message, modelStateErrors, error)
+
   }
 
   //----------------------//

@@ -18,16 +18,15 @@ import { JtUiIcon } from '../../icon/icon';
       class="jt-icon-btn"
       [ngClass]="theme()">
       <jt-ui-icon [theme]="theme()"> {{iconName() }}</jt-ui-icon>
-      <!-- <i class="material-icons">{{ iconName() }}</i> -->
     </button>
   `,
   styleUrls: ['./icon-button.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class JtUiIconButton {
-  
+
   disabled = input<boolean>(false);
-  theme = input<JustTipTheme>('primary');
+  theme = input<JustTipTheme | undefined>(undefined);
   type = input<'button' | 'submit' | 'reset'>('button');
   iconName = input<string>();
 

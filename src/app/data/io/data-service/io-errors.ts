@@ -94,6 +94,7 @@ export class BadRequestError extends HttpError {
     public override originalError?: unknown
   ) {
     super(originalError, StatusCodes.BAD_REQUEST, 'Bad Request', message);
+    
   }
 } 
 

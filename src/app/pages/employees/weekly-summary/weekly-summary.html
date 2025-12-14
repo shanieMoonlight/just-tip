@@ -22,6 +22,11 @@
 @if(_summary(); as summary){
         <jt-ui-employee-weekly-summary-card 
           [employee]="summary"/>
+         <jt-ui-button 
+            [routerLink]="_addShiftRoute()" 
+            id="btn-shift" >
+            Add Shift
+          </jt-ui-button>
 } @else {
   @if(!_loading() && !_errorMsg()){
     <h1>No Soup for you !!!!</h1>

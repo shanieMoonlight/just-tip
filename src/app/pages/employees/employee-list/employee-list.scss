@@ -17,27 +17,36 @@
   width: 90%;
   max-width: 350px;
 }
-
-
+.employee-card {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-radius: 12px;
+    background: var(--mat-sys-surface, #ffffff);
+    color: var(--mat-sys-on-surface, #111111);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 4px 6px rgba(0, 0, 0, 0.06);
+    transition: transform .12s ease, box-shadow .18s ease;
+    width: 90%;
+    border: var(--card-border);
+    cursor: pointer;
+}
 .employee-display {
-  display: flex;
-  flex-direction: column;
-  padding: 12px 16px;
-  border-radius: 12px;
-  background: var(--mat-sys-surface, #ffffff);
-  color: var(--mat-sys-on-surface, #111111);
-  transition: transform .12s ease, box-shadow .18s ease;
-  width: 100%;
-  box-shadow: var(--card-shadow);
-  cursor: pointer;
-  border: var(--card-border);
-  box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 12px 16px;
+    flex: 1;
+    // border: var(--card-border);
+    cursor: pointer;
 }
 
-.employee-display:hover {
+.employee-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-  --card-border: 1px solid var(--border-color-hover);
+  // --card-border: 1px solid var(--border-color-hover);
+}
+
+:host-context(.dark-mode) .employee-card:hover {
+    --card-border: 1px solid rgba(var(--mat-sys-primary-rgb), 0.35);
 }
 
 .employee-content {
@@ -46,13 +55,14 @@
   align-items: center;
 }
 
-.employee-amount {
+.employee-name {
   font-weight: 600;
   color: var(--mat-sys-primary, #6200ee);
   font-size: 1.05rem;
 }
 
-.employee-meta {
-  color: rgba(0, 0, 0, 0.6);
+.employee-description {
+  // color: rgba(0, 0, 0, 0.6);
+  color: var(--mat-sys-neutral-variant, #605d5c);
   font-size: 0.875rem;
 }

@@ -58,6 +58,21 @@ export const appRoutes: Route[] = [
         pathMatch: 'full',
     },
     {
+        path: `${JtAppRouteDefs.route('add-shift')}/:${JtAppRouteDefs.EMPLOYEE_ID_PARAM}`,
+        loadComponent: () => import('./pages/shifts/add/add-shift').then((m) => m.JtAddShiftPage),
+        pathMatch: 'full',        
+    },
+    {
+        path: `${JtAppRouteDefs.route('edit-shift')}/:${JtAppRouteDefs.SHIFT_ID_PARAM}`,
+        loadComponent: () => import('./pages/shifts/edit/edit-shift').then((m) => m.JtEditShiftPage),
+        pathMatch: 'full',        
+    },
+    {
+        path: `${JtAppRouteDefs.route('employee-shifts')}/:${JtAppRouteDefs.EMPLOYEE_ID_PARAM}`,
+        loadComponent: () => import('./pages/shifts/list/shift-list').then((m) => m.JtShiftListPage),
+        pathMatch: 'full',        
+    },
+    {
         path: '',
         redirectTo: JtAppRouteDefs.route('home'),
         pathMatch: 'full',

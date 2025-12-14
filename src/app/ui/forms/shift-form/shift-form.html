@@ -1,0 +1,93 @@
+
+<form [formGroup]="_form" [sbFormControlFirstError]="_form" class="form">
+
+    <input type="hidden" formControlName="id" />
+    <input type="hidden" formControlName="employeeId" />
+
+    <div class="block" tabindex="0" >
+        
+
+        <div class="form-row title" >
+            <label class="label" for="title">Date</label>
+            <input id="title"  
+                formControlName="date" 
+                [min]="_minDate()"
+                class="control input" 
+                placeholder="Enter Date" 
+                [owlDateTimeTrigger]="dtPickerDate" 
+                [owlDateTime]="dtPickerDate"/>
+            <sb-first-error [control]="_form.controls.date" />
+            <owl-date-time #dtPickerDate      
+                [pickerType]="'calendar'"          
+                [startAt]="_minDate()"/>
+        </div>
+
+        <!-- <label>
+    Date Time:
+    <input [owlDateTimeTrigger]="dt" [owlDateTime]="dt">
+    <owl-date-time #dt></owl-date-time>
+</label> -->
+        
+        <div class="form-row">
+            <label class="label" for="description">Start Time</label>
+            <input id="description" 
+                formControlName="startTimeUtc" 
+                class="control input" 
+                placeholder="Enter Start Time" 
+                [owlDateTimeTrigger]="dtStartTime" 
+                [owlDateTime]="dtStartTime"/>
+            <sb-first-error [control]="_form.controls.startTimeUtc" />
+            <owl-date-time #dtStartTime      
+                [pickerType]="'timer'"     
+                [startAt]="_startTime()"
+                [stepHour]="1"     
+                [stepMinute]="60"/>
+        </div>
+        
+        <div class="form-row">
+            <label class="label" for="description">End Time</label>
+            <input id="description" 
+                [min]="_minEndTime()"
+                formControlName="endTimeUtc" 
+                class="control input" 
+                placeholder="Enter End Time" 
+                [owlDateTimeTrigger]="dtEndTime" 
+                [owlDateTime]="dtEndTime"/>
+            <sb-first-error [control]="_form.controls.endTimeUtc" />
+            <owl-date-time #dtEndTime      
+                [pickerType]="'timer'"     
+                [startAt]="_minStartTime()"
+                [stepHour]="1"     
+                [stepMinute]="60"/>
+        </div>
+        
+        <!-- <div class="form-row">
+            <label class="label">Question</label>
+            <jt-choice-question-cva  formControlName="question" class="control input"/>
+            <sb-first-error [control]="_form.controls.question" />
+        </div> -->
+
+
+    </div> 
+    
+    <div class="form-actions">
+        @if(_isEditMode()){
+            <jt-ui-button 
+                id="btn-edit" 
+                type="button" 
+                [disabled]="_form.invalid" 
+                (click)="update()">
+                Update
+            </jt-ui-button>
+            <!-- {{_form.invalid}} -->
+        }@else{
+            <jt-ui-button 
+                id="btn-submit" 
+                type="button" 
+                [disabled]="_form.invalid" 
+                (click)="submitForm()">
+                Save
+            </jt-ui-button>
+        }
+    </div>
+</form>

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
-import { RosterDto } from '../../data/models';
+import { RosterDto, ShiftRosterItemDto } from '../../data/models';
 import { JtUiIcon } from '../icon/icon';
 import { DatePipe } from '@angular/common';
 
@@ -35,7 +35,7 @@ export class JtUiRosterTable {
 
   // helper method used by the template to get shifts for an employee on a specific date
   //Could prpbably be optimized further, by presetting but ok for now
-  getShifts(employeeId?: string, date?: string) {
+  getShifts(employeeId?: string, date?: string) : ShiftRosterItemDto[]{
     const days = this.rosterDays();
     const day = (days ?? []).find(d => d.date === date);
     if (!day) return [] as any[];

@@ -3,8 +3,10 @@
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 1rem;
-  background-color: var(--mat-sys-surface-container);
-  color: var(--mat-sys-on-surface-container);
+  // background-color: var(--mat-sys-surface-container);
+  // color: var(--mat-sys-on-surface);
+  background-color: var(--mat-sys-primary);
+  color: var(--mat-sys-on-primary);
   height: 56px;
   box-sizing: border-box;
 }
@@ -42,4 +44,10 @@
   min-width: 48px;
   justify-content: flex-end;
   gap: 8px;
+}
+
+
+:host-context(.dark-mode) .jt-nav {
+  background-color: var(--mat-sys-surface-container, #121212);
+  color: var(--mat-sys-on-surface, #ffffff);
 }

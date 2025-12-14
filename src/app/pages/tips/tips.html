@@ -7,12 +7,14 @@
     <div class="week">
         <jt-ui-icon-button  
         jtTooltip="Previous Week"
+            theme="primary"
         (click)="previousWeek()"
         [iconName]="'arrow_circle_left'"/>
         <h2>Week ({{_weekNumberString()}})</h2>
         @if(!!_weekNumber()){
             <jt-ui-icon-button 
             jtTooltip="Next Week"
+            theme="primary"
             (click)="nextWeek()"
             [iconName]="'arrow_circle_right'"/>
         }

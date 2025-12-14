@@ -7,6 +7,8 @@ const CONTROLLER = 'Roster';
   | 'getCurrentWeek'
   | 'getUpcomingWeek'
   | 'getByWeek'
+  | 'getShift'
+  | 'editShift'
 
 
   //#################################################//

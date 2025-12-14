@@ -3,7 +3,7 @@ import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ABaseHttpService } from '../data-service/a-base-data.io.service';
 import { JustTipIoConfigService } from '../setup';
-import { RosterDto } from '../../models';
+import { RosterDto, ShiftDto, ShiftWithEmployeeDto } from '../../models';
 import { ServerRoutes } from '../controllers/all-server-routes';
 
 @Injectable({ providedIn: 'root' })
@@ -31,6 +31,21 @@ export class RosterIoService extends ABaseHttpService {
         this._getActionById<RosterDto>(
             ServerRoutes.Roster.action('getByWeek'),
             weekNumber,
+            opts ?? {}
+        );
+
+    getByShiftId = (shiftId: string, opts?: unknown): Observable<ShiftWithEmployeeDto> =>
+        this._getActionById<ShiftWithEmployeeDto>(
+            ServerRoutes.Roster.action('getShift'),
+            shiftId,
+            opts ?? {}
+        );
+
+    editShift = (shiftId: string, shift: ShiftDto, opts?: unknown): Observable<ShiftDto> =>
+        this._patchAction<ShiftDto>(
+            ServerRoutes.Roster.action('editShift'),
+            shiftId,
+            shift,
             opts ?? {}
         );
     

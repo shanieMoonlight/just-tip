@@ -2,16 +2,19 @@
   display: block;
   --divider-color: rgba(0, 0, 0, 0.06);
   // --divider-color: var(--mat-sys-outline);
-  
+
   --cell-width: 160px;
   --cell-min-width: 130px;
+  background: rgba(250, 235, 215, 0.168);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .jt-roster-table {
   display: flex;
   flex-direction: column;
   // gap: 8px;
-  width: 100%;
+  // width: 100%;
 }
 
 .header-row,
@@ -47,7 +50,7 @@
   width: var(--cell-width, 200px);
   min-width: var(--cell-min-width);
   flex: 1 0 130px;
-  padding: 8px 12px;
+  padding: 16px 12px;
   text-align: center;
   border-left: 1px solid var(--divider-color, rgba(0, 0, 0, 0.06));
   box-sizing: border-box;

@@ -5,13 +5,20 @@
         
 
         <!-- {{employee|json}} -->
-        <div class="employee-display" 
-            tabindex="0"
-            (click)="goToEmlployeeDetails(employee.id)"
-            (keyup.enter)="goToEmlployeeDetails(employee.id)"
-            (keydown.space)="$event.preventDefault(); goToEmlployeeDetails(employee.id)">
-            <div class="name">{{employee.name}}</div>
-            <div class="description">{{employee.description}}</div>
+        <div class="employee-card">
+          <div class="employee-display" 
+              tabindex="0"
+              (click)="goToEmlployeeDetails(employee.id)"
+              (keyup.enter)="goToEmlployeeDetails(employee.id)"
+              (keydown.space)="$event.preventDefault(); goToEmlployeeDetails(employee.id)">
+              <div class="employee-name">{{employee.name}}</div>
+              <div class="employee-description">{{employee.description}}</div>
+          </div>
+          <jt-ui-icon-button 
+            [routerLink]="[_shiftListRoute(), employee.id]"
+            theme="primary"
+            [jtTooltip]="employee.name + '\'s Shifts'"
+            [iconName]="'calendar_month'"/>
         </div>
         
     } @empty {
