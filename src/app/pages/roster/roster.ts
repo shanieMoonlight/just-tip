@@ -8,6 +8,9 @@ import { NotificationsModal } from '../../ui/notifications/notifications/notific
 import { JtUiRosterTable } from '../../ui/roster-table/roster-table';
 import { JtUiTooltipDirective } from '../../ui/tooltip/tooltip.directive';
 import { WeekNumberRouteService } from '../../utils/services/week-number-route/week-number-route-service';
+import { ShiftRosterItemDto } from '../../data/models';
+import { Router } from '@angular/router';
+import { JtAppRouteDefs } from '../../app-route-defs';
 
 @Component({
   selector: 'jt-roster',
@@ -27,8 +30,9 @@ import { WeekNumberRouteService } from '../../utils/services/week-number-route/w
 export class JtRosterPage {
 
   private _rosterIoService = inject(RosterIoService);
+  private _router = inject(Router);
   private _weekNumberRouteService = inject(WeekNumberRouteService);
-  
+
   //----------------//
 
   private _weekNumber$ = this._weekNumberRouteService.weekNumber$;
@@ -53,13 +57,20 @@ export class JtRosterPage {
   protected _loading = this._rosterState.loading;
 
 
-  
 
-  previousWeek = () =>
+
+  protected previousWeek = () =>
     this._weekNumberRouteService.setWeek(this._weekNumber() - 1);
 
 
-  nextWeek = () => 
+  protected nextWeek = () =>
     this._weekNumberRouteService.setWeek(this._weekNumber() + 1);
+
+  protected onShiftSelected(shift: ShiftRosterItemDto) {
+    console.log('Shift selected in roster table:', shift, shift.startTime < new Date());
+    if (new Date(shift.startTime) < new Date())
+      return
+    this._router.navigate([`/${JtAppRouteDefs.route('edit-shift')}/${shift.shiftId}`]);
+  }
 
 }//Cls

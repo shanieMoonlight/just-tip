@@ -18,7 +18,10 @@
 
 <!-- <h1>Roster: Week ({{_weekNumber()}})</h1> -->
 
-<jt-ui-roster-table [roster]="_roster()"/>
+<jt-ui-roster-table 
+  (selectedShiftItem)="onShiftSelected($event)"
+  [roster]="_roster()"
+  />
 
 <!-- ################################ -->
 

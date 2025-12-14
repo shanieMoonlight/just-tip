@@ -1,36 +1,46 @@
-<div class="jt-roster-table">
+<!-- <div class="roster-table-wrap"> -->
 
-  <div class="header-row">
-    <div class="name-col blank"></div>
-    <div class="dates">
-      @for (day of rosterDays(); track $index) {
-        <div class="col date-col">{{ day.date | date:'EEE. MMM d' }}</div>
-      }
-    </div>
-  </div>
-
-  @for (employee of employees(); track $index) {
-
-    <div class="row">
-      <div class="name-col">
-        <div class="avatar"><jt-ui-icon [iconSizePx]="28">face</jt-ui-icon></div>
-        <div class="employee-name">{{ employee.employeeName }}</div>
-      </div>
-
-      <div class="cells">
+  <table class="roster-table" role="table">
+    <thead>
+      <tr>
+        <th class="name-col blank" scope="col"></th>
         @for (day of rosterDays(); track $index) {
-          <div class="cell">
-            @if(getShifts(employee.employeeId, day.date).length) {
-              @for (shift of getShifts(employee.employeeId, day.date); track $index) {
-                <div class="shift">{{ shift.startTime | date:'shortTime'}} — {{ shift.endTime | date:'shortTime'}}</div>
-              }
-            } @else {
-              <div class="empty"></div>
-            }
-          </div>
+          <th class="date-col" scope="col">{{ day.date | date:'EEE. MMM d' }}</th>
         }
-      </div>
-    </div>
-  }
+      </tr>
+    </thead>
+    <tbody>
+      @for (employee of employees(); track $index) {
+        <tr>
+          <td class="name-col">
+            <div class="name-cell">
+                <div class="avatar"><jt-ui-icon [iconSizePx]="28">face</jt-ui-icon></div>
+                <div class="employee-name">{{ employee.employeeName }}</div>
+            </div>
+          </td>
 
-</div>
+          @for (day of rosterDays(); track $index) {
+            <td class="cell" >
+              @if(getShifts(employee.employeeId, day.date).length) {
+                @for (shift of getShifts(employee.employeeId, day.date); track $index) {
+                <div class="shift" 
+                    role="button" 
+                    tabindex="0" 
+                    (click)="edit(shift)" 
+                    (keydown.enter)="edit(shift)" 
+                    (keydown.space)="edit(shift)">
+                  {{ shift.startTime | date:'shortTime' }} — {{ shift.endTime | date:'shortTime' }}
+                </div>
+                }
+              } @else {
+                <div class="empty"></div>
+              }
+            </td>
+          }
+
+        </tr>
+      }
+    </tbody>
+  </table>
+
+<!-- </div> -->
