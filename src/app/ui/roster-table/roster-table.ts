@@ -36,8 +36,8 @@ export class JtUiRosterTable {
   });
 
   // helper method used by the template to get shifts for an employee on a specific date
-  //Could prpbably be optimized further, by presetting but ok for now
-  getShifts(employeeId?: string, date?: string): ShiftRosterItemDto[] {
+  //Could prpbably be optimized further, by presetting but ok for this demo
+  getShifts(employeeId?: string, date?: Date): ShiftRosterItemDto[] {
     const days = this.rosterDays();
     const day = (days ?? []).find(d => d.date === date);
     if (!day)

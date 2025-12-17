@@ -1,4 +1,4 @@
 export interface CreateTipDto {
-  dateTime?: string;
+  dateTime?: Date;
   amountEuros?: number;
 }

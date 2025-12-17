@@ -1,10 +1,10 @@
-import { Directive, ElementRef, HostListener, inject, Input, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, HostListener, inject, Input, Renderer2, OnDestroy } from '@angular/core';
 
 @Directive({
   selector: '[jtTooltip]',
   standalone: true,
 })
-export class JtUiTooltipDirective {
+export class JtUiTooltipDirective implements OnDestroy {
 
   private _el = inject(ElementRef)
   private _renderer = inject(Renderer2)
@@ -115,6 +115,10 @@ export class JtUiTooltipDirective {
       window.removeEventListener('scroll', this._scrollHandler, true);
       window.removeEventListener('resize', this._resizeHandler, true);
     }
+  }
+
+  ngOnDestroy(): void {
+    this.hideTooltip();
   }
 
 }//Cls

@@ -8,4 +8,3 @@ export * from './shift-dto';
 export * from './shift-roster-item-dto';
 export * from './tip-dto';
 export * from './update-tip-dto';
-export * from './weather-forecast';

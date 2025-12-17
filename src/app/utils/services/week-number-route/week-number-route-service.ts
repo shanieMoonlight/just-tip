@@ -17,7 +17,7 @@ export class WeekNumberRouteService {
 
   weekNumber$ = this._actRoute.paramMap.pipe(
     map((params: ParamMap) => params.get(JtAppRouteDefs.WEEK_NUM_PARAM) ?? undefined),
-    tap(week => console.log('Week Number from Route:', week)),
+    // tap(week => console.log('Week Number from Route:', week)),
     map(w => !w ? 0 : Number(w))
   )
   weekNumberString$ = this.weekNumber$.pipe(

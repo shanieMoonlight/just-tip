@@ -1,8 +1,44 @@
-<jt-navbar>
+<jt-navbar/>
+
+<router-outlet/>
+
+
+
+<!-- ################################ -->
+
+<ng-template #navLeftTemplate>
+    <jt-ui-icon-button
+        (click)="refreshDb()"
+        iconName='database'
+        jtTooltip="Refresh DB"/>
+</ng-template>
+
+<sb-portal-input  
+    name="nav-left" 
+    [portalTemplate]="navLeftTemplate"/>
+
+    
+<!-- ################################ -->
+
+<ng-template #navRightTemplate>
   <div class="theming">
+    <jt-tip-entry-modal/>
     <jt-dark-mode-toggle />
     <jt-theme-picker />
   </div>
-</jt-navbar>
+</ng-template>
 
-<router-outlet/>
+<sb-portal-input  
+    name="nav-right" 
+    [portalTemplate]="navRightTemplate"/>
+
+    
+<!-- ################################ -->
+
+<jt-notifications-modal
+  [isLoading]="_loading()"
+  [errorMsg]="_errorMsg()"
+  [successMsg]="_successMsg()"/>
+
+
+<!-- ################################ -->

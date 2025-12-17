@@ -2,6 +2,9 @@ import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { JtAppRouteDefs } from '../../app-route-defs';
 import { JtUiRouteCard } from '../../ui/cards/route-card/route-card';
 import { SbPortalInputComponent } from '@spider-baby/utils-portal';
+import { JtTipForm } from '../../ui/forms/tip-form/tip-form';
+import { JtTipEntry } from '../../smart-ui/tip-entry/tip-entry';
+import { JtTipEntryModal } from '../../ui/forms/tip-form/tip-entry-modal';
 
 //######################################//
 

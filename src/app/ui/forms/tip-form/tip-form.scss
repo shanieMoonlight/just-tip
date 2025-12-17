@@ -1,0 +1,21 @@
+:host {
+  display: block;
+}
+
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .checkboxes {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .form-row{
+    margin-bottom: 0;
+    margin-left: 20px;
+  }
+
+}

@@ -1,0 +1,31 @@
+
+<form [formGroup]="_form" [sbFormControlFirstError]="_form" class="form">
+
+    <input type="hidden" formControlName="dateTime" />
+
+    <!-- <div class="block" tabindex="0" > -->
+        
+
+        <div class="form-row title" >
+            <label class="label" for="amountEuros">Amount €</label>
+            <input id="amountEuros"  
+                formControlName="amountEuros" 
+                [min]="0"
+                type="number"
+                class="control input" 
+                placeholder="Tip Amount" />
+            <sb-first-error [control]="_form.controls.amountEuros" />
+        </div>
+
+    <!-- </div>  -->
+    <!-- {{_form.invalid}} -->
+    <div class="form-actions">
+        <jt-ui-button 
+            id="btn-submit" 
+            type="button" 
+            [disabled]="_form.invalid" 
+            (click)="submitForm()">
+            Save Tip
+        </jt-ui-button>
+    </div>
+</form>

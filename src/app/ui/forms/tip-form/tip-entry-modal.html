@@ -1,0 +1,23 @@
+<jt-ui-icon-button
+    (click)="openModal()"
+    iconName='paid'
+    jtTooltip="Record Tip"/>
+
+
+@if (_showModal()) {
+  <div class="tip-modal-backdrop">
+    <div class="tip-modal">
+      <div class="tip-modal-header">
+        <jt-ui-icon>paid</jt-ui-icon>
+        <h3>Enter Tip</h3>
+          <jt-ui-icon-button 
+            iconName="close"
+            aria-label="Close tip modal" 
+            (click)="closeModal()"/>
+      </div>
+      <div class="tip-modal-body">
+        <jt-tip-entry/>
+      </div>     
+    </div>
+  </div>
+}

@@ -1,5 +1,5 @@
 export interface TipDto {
   id?: string;
-  dateTime?: string;
+  dateTime?: Date;
   amountEuros?: number;
 }

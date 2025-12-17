@@ -4,6 +4,9 @@
       [src]="logo()" 
       alt="logo" 
       [routerLink]="'/'" />
+    <div class="title">
+      <sb-portal-outlet name="nav-left"/>
+    </div>
   </div>
 
   <div class="center">
@@ -14,6 +17,6 @@
   </div>
 
   <div class="right">
-    <ng-content />
+      <sb-portal-outlet name="nav-right"/>
   </div>
 </header>
