@@ -58,8 +58,8 @@ export class JtTipsPage {
   )
 
 
-  protected _totalTips = computed(() => this._totalTipsState.data());
-  protected _tips = computed(() => this._tipsState.data());
+  protected _totalTips = this._totalTipsState.data;
+  protected _tips = this._tipsState.data;
   protected _successMsg = this._notificationStates.successMsg;
   protected _errorMsg = this._notificationStates.errorMsg;
   protected _loading = this._notificationStates.loading;

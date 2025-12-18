@@ -1,10 +1,9 @@
-import { JsonPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
 import { MiniStateBuilder } from '@spider-baby/mini-state';
 import { SbPortalInputComponent } from '@spider-baby/utils-portal';
-import { combineLatest, filter, map, startWith } from 'rxjs';
+import { combineLatest, distinctUntilChanged, filter, map } from 'rxjs';
 import { JtAppRouteDefs } from '../../../app-route-defs';
 import { EmployeesIoService } from '../../../data/io';
 import { JtUiButton } from '../../../ui/buttons/button/button.component';
@@ -40,14 +39,14 @@ export class JtEmployeeWeeklySummary {
 
 
   private _weekNumber$ = this._weekNumberRouteService.weekNumber$
-    .pipe(startWith(0));
   _weekNumber = this._weekNumberRouteService.weekNumber;
   _weekNumberString = this._weekNumberRouteService.weekNumberString;
 
 
   private _id$ = this._actRoute.paramMap.pipe(
     map((params: ParamMap) => params.get(JtAppRouteDefs.DETAIL_ID_PARAM) ?? undefined),
-    filter((id: string | undefined): id is string => !!id)
+    filter((id: string | undefined): id is string => !!id),
+    distinctUntilChanged(),
   )
 
   private _id = toSignal(this._id$);
@@ -58,7 +57,8 @@ export class JtEmployeeWeeklySummary {
   //----------------//
 
   private _idAndWeek$ = combineLatest([this._id$, this._weekNumber$]).pipe(
-    map(([id, weekNumber]) => ({ id, weekNumber }))
+    map(([id, weekNumber]) => ({ id, weekNumber })),
+    distinctUntilChanged(),
   );
 
   _idAndWeek = toSignal(this._idAndWeek$);

@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { map } from 'rxjs';
+import { distinctUntilChanged, map } from 'rxjs';
 import { JtAppRouteDefs } from '../../../app-route-defs';
 import { Identifier } from '../../../data/io/data-service/identifier';
 
@@ -17,8 +17,8 @@ export class WeekNumberRouteService {
 
   weekNumber$ = this._actRoute.paramMap.pipe(
     map((params: ParamMap) => params.get(JtAppRouteDefs.WEEK_NUM_PARAM) ?? undefined),
-    // tap(week => console.log('Week Number from Route:', week)),
-    map(w => !w ? 0 : Number(w))
+    map(w => !w ? 0 : Number(w)),
+    distinctUntilChanged(),
   )
   weekNumberString$ = this.weekNumber$.pipe(
     map((week: Identifier) => `${!week ? 'Current' : week}`)
@@ -32,6 +32,9 @@ export class WeekNumberRouteService {
 
 
   setWeek(week: number | string) {
+
+    // console.log('navigate ', week);
+    
 
     const weekStr = String(week);
     const hasParam = this._actRoute.snapshot.paramMap.has(JtAppRouteDefs.WEEK_NUM_PARAM);

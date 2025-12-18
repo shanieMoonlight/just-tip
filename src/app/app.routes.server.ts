@@ -27,7 +27,19 @@ export const serverRoutes: ServerRoute[] = [
     renderMode: RenderMode.Client
   },
   {
+    path: `${JtAppRouteDefs.route('employees')}`,
+    renderMode: RenderMode.Client
+  },
+  {
     path: `${JtAppRouteDefs.route('tips')}/:${JtAppRouteDefs.WEEK_NUM_PARAM}`,
+    renderMode: RenderMode.Client
+  },
+  {
+    path: `${JtAppRouteDefs.route('tips')}`,
+    renderMode: RenderMode.Client
+  },
+  {
+    path: `${JtAppRouteDefs.route('roster')}`,
     renderMode: RenderMode.Client
   },
   {
