@@ -8,6 +8,7 @@ import { JtUiIconButton } from '../../ui/buttons/icon-button/icon-button';
 import { NotificationsModal } from '../../ui/notifications/notifications/notifications.component';
 import { JtUiTooltipDirective } from '../../ui/tooltip/tooltip.directive';
 import { WeekNumberRouteService } from '../../utils/services/week-number-route/week-number-route-service';
+import { JtUiNoDataCard } from '../../ui/cards/no-data-card/no-data-card';
 
 @Component({
   selector: 'jt-tips',
@@ -17,7 +18,8 @@ import { WeekNumberRouteService } from '../../utils/services/week-number-route/w
     JtUiTooltipDirective,
     JtUiIconButton,
     DatePipe,
-    CurrencyPipe
+    CurrencyPipe,
+    JtUiNoDataCard
   ],
   templateUrl: './tips.html',
   styleUrl: './tips.scss',

@@ -16,12 +16,18 @@
     </div>    
 </div>
 
-<!-- <h1>Roster: Week ({{_weekNumber()}})</h1> -->
 
-<jt-ui-roster-table 
-  (selectedShiftItem)="onShiftSelected($event)"
-  [roster]="_roster()"
-  />
+@if(!_roster()?.days?.length){
+      @if(!_loading() && !_errorMsg() && _weekNumber() === 0){   
+              <jt-no-data-card/>
+      }@else{
+        <h3 class="no-roster-message">No roster data available for this week.</h3>
+      }
+} @else {
+  <jt-ui-roster-table 
+    (selectedShiftItem)="onShiftSelected($event)"
+    [roster]="_roster()"/>
+}
 
 <!-- ################################ -->
 

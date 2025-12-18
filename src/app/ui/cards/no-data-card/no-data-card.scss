@@ -1,0 +1,18 @@
+:host {
+    text-align: center;
+    // max-width: 36rem;
+    // background: linear-gradient(180deg, #fffef8 0%, #fffdfa 100%); 
+    background: var(--mat-sys-surface-container);
+    color: var(--mat-sys-on-surface);
+    border-radius: 12px;
+    padding: 2.25rem 1.5rem;
+    box-shadow: 0 6px 20px rgba(20, 20, 30, 0.06);
+    
+  .title::after {
+    content: " 🍜";
+    display: inline-block;
+    margin-left: 0.45rem;
+    transform: translateY(2px) rotate(-6deg);
+  }
+
+}

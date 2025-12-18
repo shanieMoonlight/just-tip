@@ -11,6 +11,7 @@ import { WeekNumberRouteService } from '../../utils/services/week-number-route/w
 import { ShiftRosterItemDto } from '../../data/models';
 import { Router } from '@angular/router';
 import { JtAppRouteDefs } from '../../app-route-defs';
+import { JtUiNoDataCard } from '../../ui/cards/no-data-card/no-data-card';
 
 @Component({
   selector: 'jt-roster',
@@ -19,7 +20,7 @@ import { JtAppRouteDefs } from '../../app-route-defs';
     SbPortalInputComponent,
     JtUiIconButton,
     JtUiTooltipDirective,
-    JsonPipe,
+    JtUiNoDataCard,
     JtUiRosterTable
   ],
   templateUrl: './roster.html',

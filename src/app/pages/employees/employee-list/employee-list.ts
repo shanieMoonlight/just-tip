@@ -1,13 +1,13 @@
 import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 import { MiniStateBuilder } from '@spider-baby/mini-state';
 import { SbPortalInputComponent } from '@spider-baby/utils-portal';
-import { EmployeesIoService } from '../../../data/io';
-import { NotificationsModal } from '../../../ui/notifications/notifications/notifications.component';
-import { JsonPipe } from '@angular/common';
-import { EmployeeDto } from '../../../data/models';
-import { Router, RouterLink } from '@angular/router';
 import { JtAppRouteDefs } from '../../../app-route-defs';
+import { EmployeesIoService } from '../../../data/io';
+import { EmployeeDto } from '../../../data/models';
 import { JtUiIconButton } from '../../../ui/buttons/icon-button/icon-button';
+import { JtUiNoDataCard } from '../../../ui/cards/no-data-card/no-data-card';
+import { NotificationsModal } from '../../../ui/notifications/notifications/notifications.component';
 import { JtUiTooltipDirective } from '../../../ui/tooltip/tooltip.directive';
 
 @Component({
@@ -18,7 +18,7 @@ import { JtUiTooltipDirective } from '../../../ui/tooltip/tooltip.directive';
     JtUiIconButton,
     RouterLink,
     JtUiTooltipDirective,
-    JsonPipe
+    JtUiNoDataCard
   ],
   templateUrl: './employee-list.html',
   styleUrl: './employee-list.scss',

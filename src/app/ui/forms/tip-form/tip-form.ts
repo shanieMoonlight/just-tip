@@ -22,17 +22,11 @@ interface ITipForm {
     ReactiveFormsModule,
     FirstErrorDirective,
     FirstErrorComponent,
-    JtUiButton,
-    JtUiIconButton,
-    JtUiTextButton,
-    JtUiIcon
+    JtUiButton
   ],
   templateUrl: './tip-form.html',
   styleUrl: './tip-form.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  // host: {
-  //   ngSkipHydration: 'true'
-  // },
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class JtTipForm {
 
