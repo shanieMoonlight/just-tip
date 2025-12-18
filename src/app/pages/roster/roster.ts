@@ -40,34 +40,33 @@ export class JtRosterPage {
   protected _weekNumber = this._weekNumberRouteService.weekNumber;
   protected _weekNumberString = this._weekNumberRouteService.weekNumberString
 
-  protected _title = computed(() => `Roster Week (${this._weekNumber() > 0 ? '+' : ''}${this._weekNumberString()})`);
+  protected _title = computed(() =>
+    `Roster Week (${this._weekNumber() > 0
+      ? '+'
+      : ''}${this._weekNumberString()})`
+  );
 
-  // private _rosterState = MiniStateBuilder.Create(
-  //   () => this._rosterIoService.currentWeek())
-  //   .trigger();//Trigger immediately
 
   private _rosterState = MiniStateBuilder.CreateWithObservableInput(
     this._weekNumber$,
     (weekNumber: number) => this._rosterIoService.getByWeek(weekNumber))
 
 
-  protected _roster = computed(() => this._rosterState.data());
+  _roster = computed(() => this._rosterState.data());
   // protected _roster = signal(rosterSample);
-  protected _successMsg = this._rosterState.successMsg;
-  protected _errorMsg = this._rosterState.errorMsg;
-  protected _loading = this._rosterState.loading;
+   _successMsg = this._rosterState.successMsg;
+   _errorMsg = this._rosterState.errorMsg;
+   _loading = this._rosterState.loading;
 
 
-
-
-  protected previousWeek = () =>
+  previousWeek = () =>
     this._weekNumberRouteService.setWeek(this._weekNumber() - 1);
 
 
-  protected nextWeek = () =>
+  nextWeek = () =>
     this._weekNumberRouteService.setWeek(this._weekNumber() + 1);
 
-  protected onShiftSelected(shift: ShiftRosterItemDto) {
+  onShiftSelected(shift: ShiftRosterItemDto) {
     console.log('Shift selected in roster table:', shift, shift.startTime < new Date());
     if (new Date(shift.startTime) < new Date())
       return

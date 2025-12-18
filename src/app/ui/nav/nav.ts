@@ -25,7 +25,5 @@ export class JtNavbar {
 
   /** Path to logo image */
   logo = input<string>(DEFAULT_LOGO);
-
-  /** Center title */
-  title = input<string>('JustTip Test');
+  
 }

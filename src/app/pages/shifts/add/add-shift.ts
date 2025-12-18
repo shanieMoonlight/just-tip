@@ -40,7 +40,7 @@ export class JtAddShiftPage {
     filter((id: string | undefined): id is string => !!id)
   )
 
-  protected _employeeId = toSignal(this._employeeId$);
+  _employeeId = toSignal(this._employeeId$);
 
   //----------------//
 
@@ -49,7 +49,7 @@ export class JtAddShiftPage {
     (id: string) => this._employeeIoService.getById(id))
 
 
-  protected addShift = (shift: ShiftDto) => this._addShiftState.trigger(shift);
+  addShift = (shift: ShiftDto) => this._addShiftState.trigger(shift);
   private _addShiftState = MiniStateBuilder
     .CreateWithInput((shift: ShiftDto) => this._employeeIoService.addShift(shift))
     .setOnSuccessFn(() => {
@@ -62,10 +62,10 @@ export class JtAddShiftPage {
     this._addShiftState
   )
 
-  protected _employee = this._employeeState.data;
-  protected _title = computed(() => `Add Shift - ${this._employee()?.name}`);
-  protected _successMsg = this._notificationStates.successMsg;
-  protected _errorMsg = this._notificationStates.errorMsg;
-  protected _loading = this._notificationStates.loading;
+  _employee = this._employeeState.data;
+  _title = computed(() => `Add Shift - ${this._employee()?.name}`);
+  _successMsg = this._notificationStates.successMsg;
+  _errorMsg = this._notificationStates.errorMsg;
+  _loading = this._notificationStates.loading;
 
 }

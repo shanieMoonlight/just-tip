@@ -1,4 +1,3 @@
-import { JsonPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
@@ -6,7 +5,7 @@ import { MiniStateBuilder } from '@spider-baby/mini-state';
 import { MiniStateCombined } from '@spider-baby/mini-state/utils';
 import { SbToastService } from '@spider-baby/ui-toast';
 import { SbPortalInputComponent } from '@spider-baby/utils-portal';
-import { filter, map, of, tap } from 'rxjs';
+import { filter, map, tap } from 'rxjs';
 import { JtAppRouteDefs } from '../../../app-route-defs';
 import { RosterIoService } from '../../../data/io';
 import { ShiftDto } from '../../../data/models';
@@ -18,7 +17,6 @@ import { NotificationsModal } from '../../../ui/notifications/notifications/noti
   imports: [
     NotificationsModal,
     SbPortalInputComponent,
-    JsonPipe,
     JtUiShiftForm
   ],
   templateUrl: './edit-shift.html',
@@ -49,10 +47,9 @@ export class JtEditShiftPage {
     (id: string) => this._rosterIoService.getByShiftId(id))
 
 
-  protected editShift = (shift: ShiftDto) => this._editShiftState.trigger(shift);
+  editShift = (shift: ShiftDto) => this._editShiftState.trigger(shift);
   private _editShiftState = MiniStateBuilder
     .CreateWithInput((shift: ShiftDto) => this._rosterIoService.editShift(shift.id, shift))
-    // .CreateWithInput((shift: ShiftDto) => of(0))
     .setOnSuccessFn(() => {
       this._toaster.success(`Shift Updated!`);
       this._router.navigateByUrl(`/${JtAppRouteDefs.route('employee-shifts')}/${this._shift()?.employee.id}`)
@@ -63,11 +60,11 @@ export class JtEditShiftPage {
     this._editShiftState
   )
 
-  protected _shift = this._shiftState.data;
-  protected _employee = computed(() => this._shift()?.employee);
-  protected _title = computed(() => `Edit Shift - ${this._employee()?.name}`);
-  protected _successMsg = this._notificationStates.successMsg;
-  protected _errorMsg = this._notificationStates.errorMsg;
-  protected _loading = this._notificationStates.loading;
+  _shift = this._shiftState.data;
+  _employee = computed(() => this._shift()?.employee);
+  _title = computed(() => `Edit Shift - ${this._employee()?.name}`);
+  _successMsg = this._notificationStates.successMsg;
+  _errorMsg = this._notificationStates.errorMsg;
+  _loading = this._notificationStates.loading;
 
 }

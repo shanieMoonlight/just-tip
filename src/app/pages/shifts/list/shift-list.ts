@@ -1,4 +1,4 @@
-import { DatePipe, JsonPipe } from '@angular/common';
+import { DatePipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
@@ -21,8 +21,7 @@ import { JtUiTooltipDirective } from '../../../ui/tooltip/tooltip.directive';
     DatePipe,
     JtUiIconButton,
     RouterLink,
-    JtUiTooltipDirective,
-    JsonPipe
+    JtUiTooltipDirective
   ],
   templateUrl: './shift-list.html',
   styleUrl: './shift-list.scss',

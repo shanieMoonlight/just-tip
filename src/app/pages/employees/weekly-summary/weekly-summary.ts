@@ -23,7 +23,6 @@ import { WeekNumberRouteService } from '../../../utils/services/week-number-rout
     JtUiButton,
     JtUiEmployeeWeeklySummaryCard,
     JtUiTooltipDirective,
-    JsonPipe,
     RouterLink
   ],
   templateUrl: './weekly-summary.html',
@@ -42,8 +41,8 @@ export class JtEmployeeWeeklySummary {
 
   private _weekNumber$ = this._weekNumberRouteService.weekNumber$
     .pipe(startWith(0));
-  protected _weekNumber = this._weekNumberRouteService.weekNumber;
-  protected _weekNumberString = this._weekNumberRouteService.weekNumberString;
+  _weekNumber = this._weekNumberRouteService.weekNumber;
+  _weekNumberString = this._weekNumberRouteService.weekNumberString;
 
 
   private _id$ = this._actRoute.paramMap.pipe(
@@ -53,7 +52,7 @@ export class JtEmployeeWeeklySummary {
 
   private _id = toSignal(this._id$);
 
-  protected _title = computed(() => `Summary Week (${this._weekNumberString()})`);
+  _title = computed(() => `Summary Week (${this._weekNumberString()})`);
 
 
   //----------------//
@@ -69,12 +68,12 @@ export class JtEmployeeWeeklySummary {
     (idAndWeek) => this._employeeIoService.getEmployeeWeeklySummaryById(idAndWeek.id, idAndWeek.weekNumber))
 
 
-  protected _summary = this._summaryState.data;
-  protected _successMsg = this._summaryState.successMsg;
-  protected _errorMsg = this._summaryState.errorMsg;
-  protected _loading = this._summaryState.loading;
+  _summary = this._summaryState.data;
+  _successMsg = this._summaryState.successMsg;
+  _errorMsg = this._summaryState.errorMsg;
+  _loading = this._summaryState.loading;
 
-  protected _addShiftRoute = computed(() =>
+  _addShiftRoute = computed(() =>
     `/${JtAppRouteDefs.route('add-shift')}/${this._id()}`)
 
   //----------------//

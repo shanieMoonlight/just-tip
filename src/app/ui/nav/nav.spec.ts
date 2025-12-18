@@ -30,20 +30,30 @@ describe('JtNavbar', () => {
 
     const titleEl = fixture.debugElement.query(By.css('.center .title'))?.nativeElement as HTMLElement;
     expect(titleEl).toBeTruthy();
-    expect(titleEl.textContent?.trim()).toBe('JustTip Test');
+    expect(titleEl.querySelector('sb-portal-outlet[name="title"]')).toBeTruthy();
   });
 
-  it('accepts `logo` and `title` inputs', () => {
+  
+  it('renders default left and right portals', () => {
+    fixture.detectChanges();
+
+    const leftEl = fixture.debugElement.query(By.css('.left-portal'))?.nativeElement as HTMLElement;
+    expect(leftEl).toBeTruthy();
+    expect(leftEl.querySelector('sb-portal-outlet[name="nav-left"]')).toBeTruthy();
+
+    
+    const rightEl = fixture.debugElement.query(By.css('.right-portal'))?.nativeElement as HTMLElement;
+    expect(rightEl).toBeTruthy();
+    expect(rightEl.querySelector('sb-portal-outlet[name="nav-right"]')).toBeTruthy();    
+  });
+
+  it('accepts `logo` inputs', () => {
     const testLogo = '/assets/test-logo.png';
-    const testTitle = 'My App';
     fixture.componentRef.setInput('logo', testLogo);
-    fixture.componentRef.setInput('title', testTitle);
     fixture.detectChanges();
 
     const img = fixture.debugElement.query(By.css('img.logo'))?.nativeElement as HTMLImageElement;
     expect(img.src).toContain(testLogo);
 
-    const titleEl = fixture.debugElement.query(By.css('.center .title'))?.nativeElement as HTMLElement;
-    expect(titleEl.textContent?.trim()).toBe(testTitle);
   });
 });

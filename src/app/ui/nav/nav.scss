@@ -40,12 +40,14 @@
   font-size: 1.05rem;
 }
 
-.right {
+.right-portal, .left-portal {
   min-width: 48px;
   justify-content: flex-end;
   gap: 8px;
 }
-
+.left-portal {
+  justify-content: flex-start;
+}
 
 :host-context(.dark-mode) .jt-nav {
   background-color: var(--mat-sys-surface-container, #121212);

@@ -2,7 +2,6 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { MiniStateBuilder } from '@spider-baby/mini-state';
 import { TipsIoService } from '../../data/io';
 import { CreateTipDto } from '../../data/models';
-import { JtUiIconButton } from '../../ui/buttons/icon-button/icon-button';
 import { JtTipForm } from '../../ui/forms/tip-form/tip-form';
 import { NotificationsModal } from '../../ui/notifications/notifications/notifications.component';
 
@@ -10,7 +9,6 @@ import { NotificationsModal } from '../../ui/notifications/notifications/notific
   selector: 'jt-tip-entry',
   imports: [
     JtTipForm,
-    JtUiIconButton,
     NotificationsModal
   ],
   templateUrl: './tip-entry.html',

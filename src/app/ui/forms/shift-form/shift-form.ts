@@ -30,9 +30,6 @@ interface IShiftForm {
     FirstErrorDirective,
     FirstErrorComponent,
     JtUiButton,
-    JtUiIconButton,
-    JtUiTextButton,
-    JtUiIcon,
     OwlDateTimeModule,
     OwlNativeDateTimeModule
   ],

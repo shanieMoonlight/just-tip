@@ -1,7 +1,7 @@
 
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { EmployeeDto, RemoveShiftDto, ShiftDto, ShiftRemovedResult, ShiftRosterItemDto } from '../../models';
+import { EmployeeDto, ShiftDto, ShiftRemovedResult, ShiftRosterItemDto } from '../../models';
 import { EmployeeWeeklySummaryDto } from '../../models/employee-weekly-summary-dto';
 import { ServerRoutes } from '../controllers/all-server-routes.js';
 import { ABaseHttpService } from '../data-service/a-base-data.io.service.js';

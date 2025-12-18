@@ -1,6 +1,5 @@
 import { JsonPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { MiniStateBuilder } from '@spider-baby/mini-state';
 import { SbPortalInputComponent } from '@spider-baby/utils-portal';
@@ -36,9 +35,6 @@ export class JtEmployeeDetailPage {
     map((params: ParamMap) => params.get(JtAppRouteDefs.DETAIL_ID_PARAM) ?? undefined),
     filter((id: string | undefined): id is string => !!id)
   )
-
-  protected _id = toSignal(this._id$);
-
 
   //----------------//
 

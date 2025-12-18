@@ -30,7 +30,10 @@ describe('JtUiIconButton', () => {
     const btn: HTMLButtonElement = btnDe.nativeElement;
     expect(btn.getAttribute('type')).toBe('button');
     expect(btn.disabled).toBe(false);
-    expect(btn.classList.contains('primary')).toBeTruthy();
+    expect(btn.classList.contains('primary')).toBeFalsy();
+    expect(btn.classList.contains('secondary')).toBeFalsy();
+    expect(btn.classList.contains('tertiary')).toBeFalsy();
+    expect(btn.classList.contains('error')).toBeFalsy();
   });
 
   it('applies inputs via componentRef.setInput and renders icon name', () => {
