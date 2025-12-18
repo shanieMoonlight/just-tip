@@ -11,7 +11,19 @@ export const serverRoutes: ServerRoute[] = [
     renderMode: RenderMode.Client
   },
   {
+    path: `${JtAppRouteDefs.route('employee-weekly-summary')}/:${JtAppRouteDefs.DETAIL_ID_PARAM}/:${JtAppRouteDefs.WEEK_NUM_PARAM}`,
+    renderMode: RenderMode.Client
+  },
+  {
     path: `${JtAppRouteDefs.route('employee-detail')}/:${JtAppRouteDefs.DETAIL_ID_PARAM}`,
+    renderMode: RenderMode.Client
+  },
+  {
+    path: `${JtAppRouteDefs.route('edit-shift')}/:${JtAppRouteDefs.SHIFT_ID_PARAM}`,
+    renderMode: RenderMode.Client
+  },
+  {
+    path: `${JtAppRouteDefs.route('employee-shifts')}/:${JtAppRouteDefs.EMPLOYEE_ID_PARAM}`,
     renderMode: RenderMode.Client
   },
   {

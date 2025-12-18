@@ -77,6 +77,11 @@ export const appRoutes: Route[] = [
         redirectTo: JtAppRouteDefs.route('home'),
         pathMatch: 'full',
     },
+    {
+        path: '**',
+        loadComponent: () => import('./pages/not-found/not-found').then((m) => m.JtNotFoundPage),
+        pathMatch: 'full',
+    },
     //   {
     //     path: '',
     //     loadComponent: () => import('./pages/employee-builder').then((m) => m.JtSurveyBuilder),

@@ -7,6 +7,7 @@
 
   --color-bg-start-hover: var(--mat-sys-primary-30);
   --color-bg-end-hover: var(--mat-sys-primary-50);
+  --color-hover: var(--mat-sys-primary-95);
 
   --color-bg-disabled: var(--mat-sys-primary-95);
   --color-txt-disabled: var(--mat-sys-primary-80);
@@ -41,6 +42,7 @@
   --color-txt: var(--mat-sys-on-secondary);
   --color-bg-start-hover: var(--mat-sys-secondary-30);
   --color-bg-end-hover: var(--mat-sys-secondary-50);
+  --color-hover: var(--mat-sys-secondary-95);
 }
 
 
@@ -49,6 +51,7 @@
   --color-txt: var(--mat-sys-on-tertiary);
   --color-bg-start-hover: var(--mat-sys-tertiary-30);
   --color-bg-end-hover: var(--mat-sys-tertiary-50);
+  --color-hover: var(--mat-sys-tertiary-95);
 }
 
 .jt-btn.error {
@@ -56,9 +59,11 @@
   --color-txt: var(--mat-sys-on-error);
   --color-bg-start-hover: var(--mat-sys-error-30);
   --color-bg-end-hover: var(--mat-sys-error-50);
+  --color-hover: var(--mat-sys-error-95);
 }
 
 
 .jt-btn:not(:disabled):hover {
   background: linear-gradient(90deg, var(--color-bg-start-hover) 0%, var(--color-bg-end-hover) 100%);
+  color: var(--color-hover);
 }

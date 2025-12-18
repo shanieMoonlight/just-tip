@@ -1,0 +1,86 @@
+.jt-not-found {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding: 3rem 1rem;
+
+  .content {
+    text-align: center;
+    max-width: 36rem;
+    // background: linear-gradient(180deg, #fffef8 0%, #fffdfa 100%); 
+    background: var(--mat-sys-surface-container);
+    color: var(--mat-sys-on-surface);
+    border-radius: 12px;
+    padding: 2.25rem 1.5rem;
+    box-shadow: 0 6px 20px rgba(20, 20, 30, 0.06);
+  }
+
+  .title {
+    font-size: 2.25rem;
+    margin: 0 0 0.5rem 0;
+    // color: #2b2b2b;
+    font-family: 'Pacifico', 'Comic Neue', 'Comic Sans MS', 'Segoe UI Emoji', cursive;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    display: inline-block;
+    transform: rotate(-1.5deg);
+    text-shadow: 0 3px 0 rgba(0, 0, 0, 0.04), 0 10px 26px rgba(34, 34, 34, 0.06);
+  }
+
+  .title::after {
+    content: " 🍜";
+    display: inline-block;
+    margin-left: 0.45rem;
+    transform: translateY(2px) rotate(-6deg);
+  }
+}
+
+.subtitle {
+  margin: 0 0 1.25rem 0;
+  // color: #5b5b5b;
+  color: var(--mat-sys-secondary);
+}
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.home-button {
+  appearance: none;
+  border: none;
+  background: var(--mat-sys-primary);
+  color: var(--mat-sys-on-primary);
+  padding: 0.6rem 1.1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.home-button:hover,
+.home-button:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(255, 107, 61, 0.18);
+  outline: none;
+}
+
+jt-ui-button {
+  margin: 2rem auto;
+  width: auto;
+}
+
+.aside {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  color: #8a8a8a;
+  // color: var(--mat-sys-tertiary);
+}
+
+
+:host {
+  display: block;
+}
